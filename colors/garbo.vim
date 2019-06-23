@@ -46,7 +46,7 @@ hi DiffAdd guibg=#151515
 hi DiffChange guibg=none
 hi DiffDelete guibg=none guifg=#555555 gui=none
 hi DiffText guibg=#363648 gui=none
-hi VertSplit guibg=#2e3036 guifg=#000000
+hi VertSplit guibg=#373940 guifg=#000000
 hi StatusLine gui=underline guifg=#6a6f7c guibg=black
 hi StatusLineNC gui=underline guifg=#373940 guibg=black
 hi TabLine guifg=#373940 guibg=black gui=underline

@@ -53,3 +53,6 @@ hi TabLine guifg=#373940 guibg=black gui=underline
 hi TabLineFill guifg=#373940 guibg=black gui=underline
 hi TabLineSel guifg=#c0c7df guibg=#000000 gui=none
 hi EndOfBuffer guifg=black
+
+" Highlight groups for plugins
+hi link CocCodeLens LineNr

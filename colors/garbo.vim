@@ -15,18 +15,18 @@ let g:colors_name = "garbo"
 hi Normal guifg=#ccd0da
 hi Visual guibg=#2c2e34
 hi ColorColumn guibg=#080808
-hi Constant gui=bold guifg=#df005f
+hi Constant gui=bold guifg=#d3005b
 hi Conceal guibg=none guifg=#eeeeee
 hi CursorLine gui=NONE guibg=#121316
 hi CursorColumn gui=NONE guibg=#121212
 hi LineNr guifg=#373940
 hi SignColumn guibg=none
 hi Comment guifg=#595d68
-hi Type gui=bold guifg=#00875f
-hi Identifier guifg=#5f5fff gui=bold
-hi Statement gui=bold guifg=#ffdf5f
-hi PreProc gui=bold guifg=#5f5fff
-hi Special guifg=#ff0000 gui=bold
+hi Type guifg=#00b982 gui=none
+hi Identifier guifg=#7a80ee
+hi Statement gui=none guifg=#fffb79
+hi PreProc guifg=#5656e6
+hi Special guifg=#ff0000
 hi SpecialKey guifg=#414153
 hi NonText guifg=#24252b gui=none
 hi Folded guifg=#949494 guibg=none
@@ -46,7 +46,7 @@ hi DiffAdd guibg=#151515
 hi DiffChange guibg=none
 hi DiffDelete guibg=none guifg=#555555 gui=none
 hi DiffText guibg=#363648 gui=none
-hi VertSplit guibg=#373940 guifg=#000000
+hi VertSplit guibg=#2e3036 guifg=#000000
 hi StatusLine gui=underline guifg=#6a6f7c guibg=black
 hi StatusLineNC gui=underline guifg=#373940 guibg=black
 hi TabLine guifg=#373940 guibg=black gui=underline

@@ -1,0 +1,58 @@
+" Vim color file
+" Maintainer: Gustavo H. M. de Sousa
+" Licence: GNU GPL
+
+" Cleaning previous colors
+hi clear
+set background=dark
+set termguicolors
+if exists("syntax_on")
+  syntax reset
+endif
+let g:colors_name = "garbo"
+
+" Colorscheme
+hi Normal $texto
+hi Visual $selecao2
+hi Constant $constante
+hi Comment $comentario
+hi Type $tipo
+hi Identifier $funcao
+hi Statement $palavra_chave
+hi PreProc $meta
+hi Special $especial
+hi SpecialKey guifg=#414153
+hi Error $erro
+hi Todo $todo
+hi IncSearch guifg=#00e2ff guibg=none
+hi Search guifg=#00e2ff guibg=none gui=bold
+hi ColorColumn guibg=#080808
+hi Conceal $texto
+hi CursorLine gui=NONE guibg=#121316
+hi CursorColumn gui=NONE guibg=#121212
+hi LineNr guifg=#373940
+hi SignColumn guibg=none
+hi NonText guifg=#24252b gui=none
+hi Folded guifg=#949494 guibg=none
+hi FoldColumn guibg=none guifg=#373940
+hi Pmenu $menu
+hi PmenuSel $selecao_do_menu
+hi SpellBad gui=underline guifg=none guibg=none
+hi SpellCap guifg=none guibg=#3a3a3a
+hi SpellRare guifg=none guibg=#5f0000
+hi SpellLocal guifg=none guibg=#00005f
+hi MatchParen $elemento_casado
+hi DiffAdd guibg=#151515
+hi DiffChange guibg=none
+hi DiffDelete guibg=none guifg=#555555 gui=none
+hi DiffText guibg=#363648 gui=none
+hi VertSplit guibg=#2e3036 guifg=#000000
+hi StatusLine gui=underline guifg=#6a6f7c guibg=black
+hi StatusLineNC gui=underline guifg=#373940 guibg=black
+hi TabLine guifg=#373940 guibg=black gui=underline
+hi TabLineFill guifg=#373940 guibg=black gui=underline
+hi TabLineSel guifg=#c0c7df guibg=#000000 gui=none
+hi EndOfBuffer guifg=black
+
+" Highlight groups for plugins
+hi link CocCodeLens LineNr

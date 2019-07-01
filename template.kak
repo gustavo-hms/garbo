@@ -13,15 +13,15 @@ face global meta rgb:5656e6
 face global builtin default+b
 
 # For markup
-face global title rgb:7a80ee
-face global header rgb:DF005F+b
-face global bold default+b
-face global italic default+i
-face global mono rgb:00b982
-face global block rgb:555e7c+b
-face global link rgb:5F5FFF+bF
-face global bullet rgb:FFDF5F+bF
-face global list rgb:fffb79
+face global title $titulo
+face global header $cabecalho
+face global bold $negrito
+face global italic $italico
+face global mono $monoespacado
+face global block $bloco
+face global link $link
+face global bullet $item
+face global list $lista
 
 # builtin faces
 face global Default rgb:CCD0DA

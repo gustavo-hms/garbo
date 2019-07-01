@@ -24,34 +24,34 @@ hi Special $especial
 hi SpecialKey guifg=#414153
 hi Error $erro
 hi Todo $todo
-hi IncSearch guifg=#00e2ff guibg=none
-hi Search guifg=#00e2ff guibg=none gui=bold
-hi ColorColumn guibg=#080808
+hi Search $busca
+hi IncSearch $busca_incremental
+hi CursorLine $linha_atual
+hi ColorColumn $linha_atual
+hi CursorColumn $linha_atual
 hi Conceal $texto
-hi CursorLine gui=NONE guibg=#121316
-hi CursorColumn gui=NONE guibg=#121212
-hi LineNr guifg=#373940
+hi LineNr $elemento_de_fundo
 hi SignColumn guibg=none
 hi NonText guifg=#24252b gui=none
-hi Folded guifg=#949494 guibg=none
-hi FoldColumn guibg=none guifg=#373940
+hi Folded $elemento_de_fundo
+hi FoldColumn $elemento_de_fundo
 hi Pmenu $menu
 hi PmenuSel $selecao_do_menu
-hi SpellBad gui=underline guifg=none guibg=none
-hi SpellCap guifg=none guibg=#3a3a3a
-hi SpellRare guifg=none guibg=#5f0000
-hi SpellLocal guifg=none guibg=#00005f
+hi VertSplit $elemento_de_fundo
+hi StatusLine $status_ativo
+hi StatusLineNC $status
+hi TabLine $status
+hi TabLineFill $status
+hi TabLineSel $elemento_ativo
+hi SpellBad $sublinhado
+hi SpellCap $atencao
+hi SpellRare $atencao
+hi SpellLocal $atencao
 hi MatchParen $elemento_casado
 hi DiffAdd guibg=#151515
 hi DiffChange guibg=none
 hi DiffDelete guibg=none guifg=#555555 gui=none
-hi DiffText guibg=#363648 gui=none
-hi VertSplit guibg=#2e3036 guifg=#000000
-hi StatusLine gui=underline guifg=#6a6f7c guibg=black
-hi StatusLineNC gui=underline guifg=#373940 guibg=black
-hi TabLine guifg=#373940 guibg=black gui=underline
-hi TabLineFill guifg=#373940 guibg=black gui=underline
-hi TabLineSel guifg=#c0c7df guibg=#000000 gui=none
+hi DiffText $atencao
 hi EndOfBuffer guifg=black
 
 " Highlight groups for plugins

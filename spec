@@ -74,7 +74,7 @@ function atributos(lista)
 
 		self.__tostring = function()
 			if #self == 0 then
-				return "none"
+				return ""
 			end
 
 			local elementos = {}
@@ -83,11 +83,7 @@ function atributos(lista)
 				elementos[i] = tostring(elemento)
 			end
 
-			if #elementos > 0 then
-				return "+" .. table.concat(elementos)
-			else
-				return ""
-			end
+			return "+" .. table.concat(elementos)
 		end
 	end
 
@@ -97,7 +93,7 @@ end
 function elemento(spec)
 	spec.fundo = spec.fundo or cor "nenhuma"
 	spec.letra = spec.letra or cor "nenhuma"
-	spec.atributos = spec.atributos or atributos {}
+	spec.atributos = spec.atributos and atributos(spec.atributos) or atributos {}
 
 	function spec:modo_vim()
 		self.fundo:modo_vim()
@@ -115,7 +111,7 @@ function elemento(spec)
 		self.atributos:modo_kakoune()
 
 		self.__tostring = function()
-			return string.format("%s,%s%s", self.fundo, self.letra, self.atributos)
+			return string.format("%s,%s%s", self.letra, self.fundo, self.atributos)
 		end
 	end
 
@@ -140,24 +136,25 @@ function estilo(elementos)
 	return e
 end
 
--- Início da especificação do estilo
+--------------------------- Especificação do estilo --------------------------
 
-local branco = cor(0xccd0da)
-local preto = cor(0x000000)
-local azul = cor(0x7a80ee)
-local azul_escuro = cor(0x5656e6)
-local azul_claro = cor(0x00e2ff)
-local verde = cor(0x00b982)
-local amarelo = cor(0xfffb79)
-local laranja = cor(0x9d4125)
-local laranja_vivo = cor(0xdf5f00)
---local laranja_vivo = cor(0xdf4102)
-local rosa1 = cor(0xd3005b)
-local rosa2 = cor(0xe11f8d)
-local vermelho = cor(0xaf0000)
+
+local branco        = cor(0xccd0da)
+local preto         = cor(0x000000)
+local azul          = cor(0x7a80ee)
+local azul_escuro   = cor(0x5656e6)
+local azul_claro    = cor(0x00e2ff)
+local verde         = cor(0x00b982)
+local amarelo       = cor(0xfffb79)
+local laranja       = cor(0x9d4125)
+local laranja_vivo  = cor(0xdf4102)
+local rosa1         = cor(0xd3005b)
+local rosa2         = cor(0xe11f8d)
+local vermelho      = cor(0xaf0000)
 local vermelho_vivo = cor(0xff0000)
 
 -- Do mais escuro pro mais claro
+local cinza0 = cor(0x111114)
 local cinza1 = cor(0x1c1d21)
 local cinza2 = cor(0x2e3036)
 local cinza3 = cor(0x373940)
@@ -169,54 +166,78 @@ local cinza8 = cor(0xc0c7df)
 local cinza9 = cor(0xcbd4ec)
 local cinza9 = cor(0xdbe6ff)
 
-local negrito = atributo "negrito"
-local italico = atributo "italico"
+local negrito    = atributo "negrito"
+local italico    = atributo "italico"
 local sublinhado = atributo "sublinhado"
-local inverso = atributo "inverso"
+local inverso    = atributo "inverso"
 
 local garbo = estilo {
+	-- Código
 	texto           = elemento { letra = branco },
-	constante       = elemento { letra = rosa1, atributos = atributos { negrito } },
+	constante       = elemento { letra = rosa1, atributos = { negrito } },
 	string          = elemento { letra = rosa2 },
 	palavra_chave   = elemento { letra = amarelo },
 	tipo            = elemento { letra = verde },
 	funcao          = elemento { letra = azul },
 	meta            = elemento { letra = azul_escuro },
 	especial        = elemento { letra = vermelho_vivo },
-	erro            = elemento { letra = vermelho, atributos = atributos { negrito } },
+	erro            = elemento { letra = vermelho, atributos = { negrito } },
 	todo            = elemento { letra = preto, fundo = vermelho },
 	comentario      = elemento { letra = cinza5 },
-	elemento_casado = elemento { atributos { negrito } },
-	selecao1        = elemento { letra = preto, fundo = laranja },
-	selecao2        = elemento { letra = preto, fundo = cinza3 },
-	menu            = elemento { letra = branco, fundo = cinza1 },
-	selecao_do_menu = elemento { letra = preto, fundo = laranja_vivo }
+
+	-- Markup
+	titulo           = elemento { letra = azul },
+	cabecalho        = elemento { letra = rosa1 },
+	negrito          = elemento { atributos = { negrito } },
+	italico          = elemento { atributos = { italico } },
+	sublinhado       = elemento { atributos = { sublinhado } },
+	monoespacado     = elemento { letra = verde },
+	bloco            = elemento { letra = cinza5, atributos = { negrito } },
+	link             = elemento { letra = azul },
+	item             = elemento { letra = azul_claro },
+	lista            = elemento { letra = branco },
+
+	-- UI
+	elemento_casado   = elemento { atributos = { negrito } },
+	selecao1          = elemento { letra = preto, fundo = laranja },
+	selecao2          = elemento { letra = preto, fundo = cinza3 },
+	menu              = elemento { letra = branco, fundo = cinza1 },
+	selecao_do_menu   = elemento { letra = preto, fundo = laranja_vivo },
+	busca             = elemento { letra = azul_claro, atributos = { negrito } },
+	busca_incremental = elemento { letra = azul_claro },
+	linha_atual       = elemento { fundo = cinza0 },
+	elemento_de_fundo = elemento { letra = cinza3 },
+	status_ativo      = elemento { letra = cinza6, atributos = { sublinhado } },
+	status            = elemento { letra = cinza3, atributos = { sublinhado } },
+	elemento_ativo    = elemento { letra = cinza8 },
+	decorativos       = elemento { letra = cinza2 },
+	atencao           = elemento { fundo = cinza3 },
 }
 
 -- Vim
 
-io.input "garbo.vim_template"
+io.input "template.vim"
 io.output "colors/garbo.vim"
 
 local template = io.read "a"
 garbo:modo_vim()
 
 for nome, elem in pairs(garbo.elementos) do
-	template = template:gsub("$" .. nome, tostring(elem))
+	template = template:gsub("$" .. nome .. "%f[^%w_]", tostring(elem))
 end
 
 io.write(template)
 
 -- Kakoune
 
-io.input "garbo.kak_template"
+io.input "template.kak"
 io.output "colors/garbo.kak"
 
 template = io.read "a"
 garbo:modo_kakoune()
 
 for nome, elem in pairs(garbo.elementos) do
-	template = template:gsub("$" .. nome, tostring(elem))
+	template = template:gsub("$" .. nome .. "%f[^%w_]", tostring(elem))
 end
 
 io.write(template)

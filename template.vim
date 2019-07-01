@@ -35,13 +35,13 @@ hi SignColumn guibg=none
 hi NonText guifg=#24252b gui=none
 hi Folded $elemento_de_fundo
 hi FoldColumn $elemento_de_fundo
-hi Pmenu $menu
+hi Pmenu $menu1
 hi PmenuSel $selecao_do_menu
 hi VertSplit $elemento_de_fundo
 hi StatusLine $status_ativo
-hi StatusLineNC $status
-hi TabLine $status
-hi TabLineFill $status
+hi StatusLineNC $status1
+hi TabLine $status1
+hi TabLineFill $status1
 hi TabLineSel $elemento_ativo
 hi SpellBad $sublinhado
 hi SpellCap $atencao

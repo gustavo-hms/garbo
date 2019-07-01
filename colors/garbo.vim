@@ -12,46 +12,46 @@ endif
 let g:colors_name = "garbo"
 
 " Colorscheme
-hi Normal guifg=#ccd0da
-hi Visual guibg=#2c2e34
-hi ColorColumn guibg=#080808
-hi Constant gui=bold guifg=#d3005b
-hi Conceal guibg=none guifg=#eeeeee
-hi CursorLine gui=NONE guibg=#121316
-hi CursorColumn gui=NONE guibg=#121212
-hi LineNr guifg=#373940
-hi SignColumn guibg=none
-hi Comment guifg=#595d68
-hi Type guifg=#00b982 gui=none
-hi Identifier guifg=#7a80ee
-hi Statement gui=none guifg=#fffb79
-hi PreProc guifg=#5656e6
-hi Special guifg=#ff0000
+hi Normal guibg=none guifg=#ccd0da gui=none
+hi Visual guibg=#373940 guifg=#000000 gui=none
+hi Constant guibg=none guifg=#d3005b gui=bold
+hi Comment guibg=none guifg=#595d68 gui=none
+hi Type guibg=none guifg=#00b982 gui=none
+hi Identifier guibg=none guifg=#7a80ee gui=none
+hi Statement guibg=none guifg=#fffb79 gui=none
+hi PreProc guibg=none guifg=#5656e6 gui=none
+hi Special guibg=none guifg=#ff0000 gui=none
 hi SpecialKey guifg=#414153
+hi Error guibg=none guifg=#af0000 gui=bold
+hi Todo guibg=#af0000 guifg=#000000 gui=none
+hi Search guibg=none guifg=#00e2ff gui=bold
+hi IncSearch guibg=none guifg=#00e2ff gui=reverse
+hi CursorLine guibg=#111114 guifg=none gui=none
+hi ColorColumn guibg=#111114 guifg=none gui=none
+hi CursorColumn guibg=#111114 guifg=none gui=none
+hi Conceal guibg=none guifg=#ccd0da gui=none
+hi LineNr guibg=none guifg=#373940 gui=none
+hi SignColumn guibg=none
 hi NonText guifg=#24252b gui=none
-hi Folded guifg=#949494 guibg=none
-hi FoldColumn guibg=none guifg=#373940
-hi Error guifg=#df0000 guibg=none gui=bold
-hi Todo guifg=black guibg=#af0000 gui=bold
-hi IncSearch guifg=#00e2ff guibg=none
-hi Search guifg=#00e2ff guibg=none gui=bold
-hi Pmenu guibg=#1c1d21 guifg=none
-hi PmenuSel guifg=none guibg=#df5f00
-hi SpellBad gui=underline guifg=none guibg=none
-hi SpellCap guifg=none guibg=#3a3a3a
-hi SpellRare guifg=none guibg=#5f0000
-hi SpellLocal guifg=none guibg=#00005f
-hi MatchParen guifg=#df5f00 guibg=none
+hi Folded guibg=none guifg=#373940 gui=none
+hi FoldColumn guibg=none guifg=#373940 gui=none
+hi Pmenu guibg=#1c1d21 guifg=#ccd0da gui=none
+hi PmenuSel guibg=#df4102 guifg=#000000 gui=none
+hi VertSplit guibg=none guifg=#373940 gui=none
+hi StatusLine guibg=none guifg=#6a6f7c gui=underline
+hi StatusLineNC guibg=none guifg=#373940 gui=underline
+hi TabLine guibg=none guifg=#373940 gui=underline
+hi TabLineFill guibg=none guifg=#373940 gui=underline
+hi TabLineSel guibg=none guifg=#c0c7df gui=none
+hi SpellBad guibg=none guifg=none gui=underline
+hi SpellCap guibg=#373940 guifg=none gui=none
+hi SpellRare guibg=#373940 guifg=none gui=none
+hi SpellLocal guibg=#373940 guifg=none gui=none
+hi MatchParen guibg=none guifg=none gui=bold
 hi DiffAdd guibg=#151515
 hi DiffChange guibg=none
 hi DiffDelete guibg=none guifg=#555555 gui=none
-hi DiffText guibg=#363648 gui=none
-hi VertSplit guibg=#2e3036 guifg=#000000
-hi StatusLine gui=underline guifg=#6a6f7c guibg=black
-hi StatusLineNC gui=underline guifg=#373940 guibg=black
-hi TabLine guifg=#373940 guibg=black gui=underline
-hi TabLineFill guifg=#373940 guibg=black gui=underline
-hi TabLineSel guifg=#c0c7df guibg=#000000 gui=none
+hi DiffText guibg=#373940 guifg=none gui=none
 hi EndOfBuffer guifg=black
 
 " Highlight groups for plugins

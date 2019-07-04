@@ -1,7 +1,15 @@
 # garbo
 
-Garbo is a [neovim](https://neovim.io/) colorscheme made to be used with transparent terminals.
+Garbo is a vim/neovim and kakoune colorscheme specially crafted for transparent terminals.
 
-![](https://user.fm/files/v2-4d49ba8b121a018b62abfed86cd1d4f6/garbo1.png)
-![](https://user.fm/files/v2-e20beff87b21cfe7b55760b46770408d/garbo2.png)
-![](https://user.fm/files/v2-4070ed3a6f835bb795c198d6b40f6a1b/garbo3.png)
+## Vim/Neovim
+
+![](https://user.fm/files/v2-0adbaecd8f2d441be41a1bef62da071c/garbo-vim1.png)
+![](https://user.fm/files/v2-e120cb1b76f411ccc9f78167df5d44ac/garbo-vim2.png)
+![](https://user.fm/files/v2-e3812347b17f6a2979b59a4eee5ca17a/garbo-vim3.png)
+
+## Kakoune
+
+![](https://user.fm/files/v2-793acc34e2bc8291aa8f3c530dccd8d5/garbo-kak1.png)
+![](https://user.fm/files/v2-c89d4a389706ff5dc89a78a61dab3337/garbo-kak2.png)
+![](https://user.fm/files/v2-3351968146ef7ccb7f2827bb3f1e308d/garbo-kak3.png)

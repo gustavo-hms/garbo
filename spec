@@ -140,6 +140,7 @@ end
 
 
 local branco        = cor(0xccd0da)
+local branco_fosco  = cor(0xaaadb4)
 local preto         = cor(0x000000)
 local azul          = cor(0x7a80ee)
 local azul_escuro   = cor(0x5656e6)
@@ -164,7 +165,7 @@ local cinza6 = cor(0x6a6f7c)
 local cinza7 = cor(0x838999)
 local cinza8 = cor(0xc0c7df)
 local cinza9 = cor(0xcbd4ec)
-local cinza9 = cor(0xdbe6ff)
+local cinza10 = cor(0xdbe6ff)
 
 local negrito    = atributo "negrito"
 local italico    = atributo "italico"
@@ -204,10 +205,11 @@ local garbo = estilo {
 	selecao2          = elemento { letra = preto, fundo = cinza3 },
 	cursor1           = elemento { letra = preto, fundo = branco },
 	cursor2           = elemento { letra = preto, fundo = cinza5 },
-	menu1             = elemento { letra = branco, fundo = cinza1 },
+	menu1             = elemento { letra = branco_fosco, fundo = cinza1, atributos = { negrito } },
 	menu2             = elemento { letra = preto, fundo = laranja },
 	menu2_invertido   = elemento { letra = laranja_vivo, fundo = preto },
-	selecao_do_menu   = elemento { letra = preto, fundo = laranja_vivo },
+	selecao_do_menu   = elemento { letra = preto, fundo = laranja },
+	informacao_do_menu = elemento { letra = verde },
 	busca             = elemento { letra = azul_claro, atributos = { negrito } },
 	busca_incremental = elemento { letra = azul_claro, atributos = { inverso } },
 	linha_atual       = elemento { fundo = cinza0 },

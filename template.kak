@@ -36,7 +36,7 @@ face global LineNumbersWrapped $decorativos
 face global LineNumberCursor $palavra_chave
 face global MenuForeground $selecao_do_menu
 face global MenuBackground $menu1
-face global MenuInfo cyan
+face global MenuInfo $informacao_do_menu
 face global Information $menu2
 face global Error $erro
 face global StatusLine $status2

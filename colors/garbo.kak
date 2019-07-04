@@ -34,9 +34,9 @@ face global SecondaryCursorEol rgb:000000,rgb:595d68
 face global LineNumbers rgb:373940,default
 face global LineNumbersWrapped rgb:2e3036,default
 face global LineNumberCursor rgb:fffb79,default
-face global MenuForeground rgb:000000,rgb:df4102
-face global MenuBackground rgb:ccd0da,rgb:1c1d21
-face global MenuInfo cyan
+face global MenuForeground rgb:000000,rgb:9d4125
+face global MenuBackground rgb:aaadb4,rgb:1c1d21+b
+face global MenuInfo rgb:00b982,default
 face global Information rgb:000000,rgb:9d4125
 face global Error rgb:af0000,default+b
 face global StatusLine rgb:ccd0da,rgb:111114

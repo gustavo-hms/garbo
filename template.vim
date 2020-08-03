@@ -13,7 +13,7 @@ let g:colors_name = "garbo"
 
 " Colorscheme
 hi Normal $texto
-hi Visual $selecao2
+hi Visual $selecao1
 hi Constant $constante
 hi Comment $comentario
 hi Type $tipo
@@ -32,8 +32,8 @@ hi CursorColumn $linha_atual
 hi Conceal $texto
 hi LineNr $elemento_de_fundo
 hi SignColumn guibg=none
-hi NonText guifg=#24252b gui=none
-hi Folded $elemento_de_fundo
+hi NonText guifg=#1c1d21 gui=none
+hi Folded $comentario
 hi FoldColumn $elemento_de_fundo
 hi Pmenu $menu1
 hi PmenuSel $selecao_do_menu
@@ -55,4 +55,6 @@ hi DiffText $atencao
 hi EndOfBuffer guifg=black
 
 " Highlight groups for plugins
-hi link CocCodeLens LineNr
+hi CocUnderline guibg=#151515
+hi link CocCodeLens Comment
+hi link NeomakeVirtualtextWarning Comment

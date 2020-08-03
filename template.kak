@@ -10,7 +10,7 @@ face global operator $operador
 face global attribute $especial
 face global comment $comentario
 face global meta $meta
-face global builtin default+b
+face global builtin $funcao
 
 # For markup
 face global title $titulo
@@ -39,9 +39,9 @@ face global MenuBackground $menu1
 face global MenuInfo $informacao_do_menu
 face global Information $menu2
 face global Error $erro
-face global StatusLine $status2
+face global StatusLine $status3
 face global StatusLineMode $menu2_invertido
-face global StatusLineInfo $elemento_ativo
+face global StatusLineInfo $titulo
 face global StatusLineValue green,default
 face global StatusCursor $cursor1
 face global Prompt $palavra_chave

@@ -200,7 +200,7 @@ local garbo = estilo {
 	lista        = elemento { letra = branco },
 
 	-- UI
-	elemento_casado    =  elemento { atributos = { negrito, italico } },
+	elemento_casado    =  elemento { atributos = { italico }, fundo = cinza2 },
 	selecao1           =  elemento { letra = preto, fundo = cinza6 },
 	selecao2           =  elemento { letra = preto, fundo = cinza2 },
 	cursor1            =  elemento { letra = preto, fundo = branco },

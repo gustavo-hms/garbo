@@ -18,6 +18,7 @@ hi Constant $constante
 hi Comment $comentario
 hi Type $tipo
 hi Identifier $funcao
+hi Function $funcao
 hi Statement $palavra_chave
 hi PreProc $meta
 hi Special $especial
@@ -37,7 +38,7 @@ hi Folded $comentario
 hi FoldColumn $elemento_de_fundo
 hi Pmenu $menu1
 hi PmenuSel $selecao_do_menu
-hi VertSplit $decorativos
+hi VertSplit $elemento_de_fundo
 hi StatusLine $status_ativo
 hi StatusLineNC $status1
 hi TabLine $status1

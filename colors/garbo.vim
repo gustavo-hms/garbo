@@ -18,6 +18,7 @@ hi Constant guibg=none guifg=#d3005b gui=bold
 hi Comment guibg=none guifg=#595d68 gui=none
 hi Type guibg=none guifg=#00b982 gui=none
 hi Identifier guibg=none guifg=#7a80ee gui=none
+hi Function guibg=none guifg=#7a80ee gui=none
 hi Statement guibg=none guifg=#fffb79 gui=none
 hi PreProc guibg=none guifg=#5656e6 gui=none
 hi Special guibg=none guifg=#ff0000 gui=none
@@ -37,7 +38,7 @@ hi Folded guibg=none guifg=#595d68 gui=none
 hi FoldColumn guibg=none guifg=#373940 gui=none
 hi Pmenu guibg=#1c1d21 guifg=#ccd0da gui=none
 hi PmenuSel guibg=#9d4125 guifg=#000000 gui=none
-hi VertSplit guibg=none guifg=#000000 gui=none
+hi VertSplit guibg=none guifg=#373940 gui=none
 hi StatusLine guibg=#1c1d21 guifg=#595d68 gui=none
 hi StatusLineNC guibg=#111114 guifg=#595d68 gui=none
 hi TabLine guibg=#111114 guifg=#595d68 gui=none
@@ -47,7 +48,7 @@ hi SpellBad guibg=none guifg=none gui=underline
 hi SpellCap guibg=none guifg=none gui=italic
 hi SpellRare guibg=none guifg=none gui=italic
 hi SpellLocal guibg=none guifg=none gui=italic
-hi MatchParen guibg=none guifg=none gui=bold,italic
+hi MatchParen guibg=#2e3036 guifg=none gui=italic
 hi DiffAdd guibg=#151515
 hi DiffChange guibg=none
 hi DiffDelete guibg=none guifg=#555555 gui=none

@@ -151,7 +151,7 @@ local laranja       = cor(0x9d4125)
 local laranja_vivo  = cor(0xdf4102)
 local rosa1         = cor(0xd3005b)
 local rosa2         = cor(0xe11f8d)
-local vermelho      = cor(0xaf0000)
+local vermelho      = cor(0xfa2a2a)
 local vermelho_vivo = cor(0xff0000)
 
 -- Do mais escuro pro mais claro
@@ -200,11 +200,13 @@ local garbo = estilo {
 	lista        = elemento { letra = branco },
 
 	-- UI
-	elemento_casado    =  elemento { atributos = { italico }, fundo = cinza2 },
+	elemento_casado    =  elemento { atributos = { negrito, italico }, fundo = cinza1 },
 	selecao1           =  elemento { letra = preto, fundo = cinza6 },
 	selecao2           =  elemento { letra = preto, fundo = cinza2 },
 	cursor1            =  elemento { letra = preto, fundo = branco },
 	cursor2            =  elemento { letra = preto, fundo = cinza5 },
+	cursor3            =  elemento { letra = preto, fundo = cinza6 },
+	cursor4            =  elemento { letra = preto, fundo = cinza3 },
 	menu1              =  elemento { letra = branco, fundo = cinza1, },
 	menu2              =  elemento { letra = branco, fundo = cinza0},
 	menu2_invertido    =  elemento { letra = laranja_vivo, fundo = preto },
@@ -217,7 +219,7 @@ local garbo = estilo {
 	status_ativo       =  elemento { letra = cinza5, fundo = cinza1 },
 	status1            =  elemento { letra = cinza5, fundo = cinza0 },
 	status2            =  elemento { letra = branco, fundo = cinza0 },
-	status3            =  elemento { letra = branco, fundo = cinza0 },
+	status3            =  elemento { letra = branco, fundo = cinza1 },
 	elemento_ativo     =  elemento { letra = cinza8 },
 	decorativos        =  elemento { letra = preto },
 	atencao            =  elemento { fundo = cinza3 },

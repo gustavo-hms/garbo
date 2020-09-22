@@ -23,8 +23,8 @@ hi Statement guibg=none guifg=#fffb79 gui=none
 hi PreProc guibg=none guifg=#5656e6 gui=none
 hi Special guibg=none guifg=#ff0000 gui=none
 hi SpecialKey guifg=#414153
-hi Error guibg=none guifg=#af0000 gui=bold
-hi Todo guibg=#af0000 guifg=#000000 gui=none
+hi Error guibg=none guifg=#fa2a2a gui=bold
+hi Todo guibg=#fa2a2a guifg=#000000 gui=none
 hi Search guibg=none guifg=#00e2ff gui=bold
 hi IncSearch guibg=none guifg=#00e2ff gui=reverse
 hi CursorLine guibg=#1c1d21 guifg=none gui=none
@@ -48,7 +48,7 @@ hi SpellBad guibg=none guifg=none gui=underline
 hi SpellCap guibg=none guifg=none gui=italic
 hi SpellRare guibg=none guifg=none gui=italic
 hi SpellLocal guibg=none guifg=none gui=italic
-hi MatchParen guibg=#2e3036 guifg=none gui=italic
+hi MatchParen guibg=#1c1d21 guifg=none gui=bold,italic
 hi DiffAdd guibg=#151515
 hi DiffChange guibg=none
 hi DiffDelete guibg=none guifg=#555555 gui=none

@@ -28,9 +28,9 @@ face global Default $texto
 face global PrimarySelection $selecao1
 face global SecondarySelection $selecao2
 face global PrimaryCursor $cursor1
-face global SecondaryCursor $cursor1
+face global SecondaryCursor $cursor3
 face global PrimaryCursorEol $cursor2
-face global SecondaryCursorEol $cursor2
+face global SecondaryCursorEol $cursor4
 face global LineNumbers $elemento_de_fundo
 face global LineNumbersWrapped $decorativos
 face global LineNumberCursor $palavra_chave

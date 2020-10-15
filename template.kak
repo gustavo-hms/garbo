@@ -1,7 +1,7 @@
 # For Code
 face global value $constante
 face global type $tipo
-face global variable $string
+face global variable $texto
 face global module $funcao
 face global function $funcao
 face global string $string

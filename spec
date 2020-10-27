@@ -227,7 +227,7 @@ local garbo = estilo {
 
 -- Vim
 
-io.input "template.vim"
+io.input "vim.template"
 io.output "colors/garbo.vim"
 
 local template = io.read "a"
@@ -241,7 +241,7 @@ io.write(template)
 
 -- Kakoune
 
-io.input "template.kak"
+io.input "kak.template"
 io.output "colors/garbo.kak"
 
 template = io.read "a"

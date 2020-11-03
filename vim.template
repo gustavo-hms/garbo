@@ -15,6 +15,7 @@ let g:colors_name = "garbo"
 hi Normal $texto
 hi Visual $selecao1
 hi Constant $constante
+hi String $string
 hi Comment $comentario
 hi Type $tipo
 hi Identifier $funcao

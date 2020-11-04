@@ -15,6 +15,12 @@ function cor(valor)
 		end
 	end
 
+	function c:modo_fish()
+		self.__tostring = function()
+			return valor == "nenhuma" and "" or string.format("%06x", self.valor)
+		end
+	end
+
 	return setmetatable(c,c)
 end
 
@@ -41,6 +47,17 @@ function atributo(valor)
 		}
 
 		self.__tostring = function() return kakoune[self.valor] end
+	end
+
+	function atrib:modo_fish()
+		local fish = {
+			sublinhado = "--underline",
+			negrito = "--bold",
+			italico = "--underline",
+			inverso = "--reverse"
+		}
+
+		self.__tostring = function() return fish[self.valor] end
 	end
 
 	return setmetatable(atrib, atrib)
@@ -87,6 +104,26 @@ function atributos(lista)
 		end
 	end
 
+	function lista:modo_fish()
+		for _, atributo in ipairs(self) do
+			atributo:modo_fish()
+		end
+
+		self.__tostring = function()
+			if #self == 0 then
+				return ""
+			end
+
+			local elementos = {}
+
+			for i, elemento in ipairs(self) do
+				elementos[i] = tostring(elemento)
+			end
+
+			return table.concat(elementos, " ")
+		end
+	end
+
 	return setmetatable(lista, lista)
 end
 
@@ -115,6 +152,16 @@ function elemento(spec)
 		end
 	end
 
+	function spec:modo_fish()
+		self.fundo:modo_fish()
+		self.letra:modo_fish()
+		self.atributos:modo_fish()
+
+		self.__tostring = function()
+			return string.format("%s %s --background=%s", self.letra, self.atributos, self.fundo)
+		end
+	end
+
 	return setmetatable(spec, spec)
 end
 
@@ -130,6 +177,12 @@ function estilo(elementos)
 	function e.modo_kakoune()
 		for _, elem in pairs(elementos) do
 			elem:modo_kakoune()
+		end
+	end
+
+	function e.modo_fish()
+		for _, elem in pairs(elementos) do
+			elem:modo_fish()
 		end
 	end
 
@@ -246,6 +299,20 @@ io.output "colors/garbo.kak"
 
 template = io.read "a"
 garbo:modo_kakoune()
+
+for nome, elem in pairs(garbo.elementos) do
+	template = template:gsub("$" .. nome .. "%f[^%w_]", tostring(elem))
+end
+
+io.write(template)
+
+-- Fish
+
+io.input "fish.template"
+io.output "colors/garbo.fish"
+
+template = io.read "a"
+garbo:modo_fish()
 
 for nome, elem in pairs(garbo.elementos) do
 	template = template:gsub("$" .. nome .. "%f[^%w_]", tostring(elem))

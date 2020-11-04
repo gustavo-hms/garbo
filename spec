@@ -203,7 +203,7 @@ local amarelo       = cor(0xfffb79)
 local laranja       = cor(0x9d4125)
 local laranja_vivo  = cor(0xdf4102)
 local rosa1         = cor(0xd3005b)
-local rosa2         = cor(0xe11f8d)
+local rosa2         = cor(0xff1ea1)
 local vermelho      = cor(0xfa2a2a)
 local vermelho_vivo = cor(0xff0000)
 
@@ -229,7 +229,7 @@ local garbo = estilo {
 	-- Código
 	texto         = elemento { letra = branco },
 	constante     = elemento { letra = rosa1, atributos = { negrito } },
-	string        = elemento { letra = rosa2, atributos = { negrito } },
+	string        = elemento { letra = rosa2 },
 	palavra_chave = elemento { letra = amarelo },
 	tipo          = elemento { letra = verde },
 	funcao        = elemento { letra = azul },
@@ -280,7 +280,7 @@ local garbo = estilo {
 
 -- Vim
 
-io.input "template.vim"
+io.input "vim.template"
 io.output "colors/garbo.vim"
 
 local template = io.read "a"
@@ -294,7 +294,7 @@ io.write(template)
 
 -- Kakoune
 
-io.input "template.kak"
+io.input "kak.template"
 io.output "colors/garbo.kak"
 
 template = io.read "a"

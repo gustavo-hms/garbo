@@ -34,6 +34,7 @@ face global SecondaryCursorEol $cursor4
 face global LineNumbers $elemento_de_fundo
 face global LineNumbersWrapped $decorativos
 face global LineNumberCursor $palavra_chave
+face global WrapMarker $elemento_de_fundo
 face global MenuForeground $selecao_do_menu
 face global MenuBackground $menu1
 face global MenuInfo $informacao_do_menu

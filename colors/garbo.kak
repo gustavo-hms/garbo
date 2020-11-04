@@ -4,7 +4,7 @@ face global type rgb:00b982,default
 face global variable rgb:ccd0da,default
 face global module rgb:7a80ee,default
 face global function rgb:7a80ee,default
-face global string rgb:e11f8d,default+b
+face global string rgb:ff1ea1,default
 face global keyword rgb:fffb79,default
 face global operator rgb:838999,default
 face global attribute rgb:ff0000,default
@@ -34,6 +34,7 @@ face global SecondaryCursorEol rgb:000000,rgb:373940
 face global LineNumbers rgb:373940,default
 face global LineNumbersWrapped rgb:000000,default
 face global LineNumberCursor rgb:fffb79,default
+face global WrapMarker rgb:373940,default
 face global MenuForeground rgb:000000,rgb:9d4125
 face global MenuBackground rgb:ccd0da,rgb:1c1d21
 face global MenuInfo rgb:00b982,default

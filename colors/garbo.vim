@@ -15,6 +15,7 @@ let g:colors_name = "garbo"
 hi Normal guibg=none guifg=#ccd0da gui=none
 hi Visual guibg=#6a6f7c guifg=#000000 gui=none
 hi Constant guibg=none guifg=#d3005b gui=bold
+hi String guibg=none guifg=#ff1ea1 gui=none
 hi Comment guibg=none guifg=#595d68 gui=none
 hi Type guibg=none guifg=#00b982 gui=none
 hi Identifier guibg=none guifg=#7a80ee gui=none

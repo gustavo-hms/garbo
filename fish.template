@@ -9,7 +9,7 @@ set -U fish_color_param $texto
 set -U fish_color_selection $selecao1
 set -U fish_color_search_match $busca
 set -U fish_color_history_current --bold
-set -U fish_color_operator $operador
+set -U fish_color_operator $funcao
 set -U fish_color_escape $operador
 set -U fish_color_cwd $monoespacado
 set -U fish_color_cwd_root $especial

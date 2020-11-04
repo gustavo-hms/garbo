@@ -9,7 +9,7 @@ set -U fish_color_param ccd0da
 set -U fish_color_selection 000000 
 set -U fish_color_search_match 00e2ff --bold
 set -U fish_color_history_current --bold
-set -U fish_color_operator 838999 
+set -U fish_color_operator 7a80ee 
 set -U fish_color_escape 838999 
 set -U fish_color_cwd 00b982 
 set -U fish_color_cwd_root ff0000 

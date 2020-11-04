@@ -158,7 +158,8 @@ function elemento(spec)
 		self.atributos:modo_fish()
 
 		self.__tostring = function()
-			return string.format("%s %s --background=%s", self.letra, self.atributos, self.fundo)
+			self.fundo = #self.fundo > 0 and " --background=" .. self.fundo or ""
+			return string.format("%s %s%s", self.letra, self.atributos, self.fundo)
 		end
 	end
 

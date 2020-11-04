@@ -1,6 +1,6 @@
 set -L
 set -U fish_color_normal normal
-set -U fish_color_command $funcao
+set -U fish_color_command $palavra_chave
 set -U fish_color_quote $string
 set -U fish_color_redirection 00afff
 set -U fish_color_end 009900

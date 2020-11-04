@@ -1,6 +1,6 @@
 set -L
 set -U fish_color_normal normal
-set -U fish_color_command 7a80ee 
+set -U fish_color_command fffb79 
 set -U fish_color_quote ff1ea1 
 set -U fish_color_redirection 00afff
 set -U fish_color_end 009900

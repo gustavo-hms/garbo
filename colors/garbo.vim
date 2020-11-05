@@ -49,7 +49,7 @@ hi SpellBad guibg=none guifg=none gui=underline
 hi SpellCap guibg=none guifg=none gui=italic
 hi SpellRare guibg=none guifg=none gui=italic
 hi SpellLocal guibg=none guifg=none gui=italic
-hi MatchParen guibg=#1c1d21 guifg=none gui=bold,italic
+hi MatchParen guibg=#2e3036 guifg=none gui=bold,italic
 hi DiffAdd guibg=#151515
 hi DiffChange guibg=none
 hi DiffDelete guibg=none guifg=#555555 gui=none

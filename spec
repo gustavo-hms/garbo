@@ -5,7 +5,7 @@ function cor(valor)
 
 	function c:modo_vim()
 		self.__tostring = function()
-			return valor == "nenhuma" and "none" or string.format("#%06x", self.valor)
+			return valor == "nenhuma" and "NONE" or string.format("#%06x", self.valor)
 		end
 	end
 
@@ -71,7 +71,7 @@ function atributos(lista)
 
 		self.__tostring = function()
 			if #self == 0 then
-				return "none"
+				return "NONE"
 			end
 
 			local elementos = {}

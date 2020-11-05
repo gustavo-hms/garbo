@@ -33,8 +33,8 @@ hi ColorColumn $linha_atual
 hi CursorColumn $linha_atual
 hi Conceal $texto
 hi LineNr $elemento_de_fundo
-hi SignColumn guibg=none
-hi NonText guifg=#1c1d21 gui=none
+hi SignColumn guibg=NONE
+hi NonText guifg=#1c1d21 gui=NONE
 hi Folded $comentario
 hi FoldColumn $elemento_de_fundo
 hi Pmenu $menu1
@@ -51,8 +51,8 @@ hi SpellRare $italico
 hi SpellLocal $italico
 hi MatchParen $elemento_casado
 hi DiffAdd guibg=#151515
-hi DiffChange guibg=none
-hi DiffDelete guibg=none guifg=#555555 gui=none
+hi DiffChange guibg=NONE
+hi DiffDelete guibg=NONE guifg=#555555 gui=NONE
 hi DiffText $atencao
 hi EndOfBuffer guifg=black
 

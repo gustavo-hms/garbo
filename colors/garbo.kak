@@ -46,9 +46,9 @@ face global StatusLineInfo rgb:7a80ee,default
 face global StatusLineValue green,default
 face global StatusCursor rgb:000000,rgb:ccd0da
 face global Prompt rgb:fffb79,default
-face global MatchingChar default,rgb:2e3036+bi
+face global MatchingChar default,rgb:2e3036+b
 face global BufferPadding rgb:111111+F
 
 # kak-lsp
-face global DiagnosticError default,rgb:373940
+face global DiagnosticError rgb:838999,default+u
 face global DiagnosticWarning default,default+i

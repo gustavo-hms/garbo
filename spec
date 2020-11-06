@@ -254,7 +254,7 @@ local garbo = estilo {
 	lista        = elemento { letra = branco },
 
 	-- UI
-	elemento_casado    =  elemento { atributos = { negrito, italico }, fundo = cinza2 },
+	elemento_casado    =  elemento { atributos = { negrito }, fundo = cinza2 },
 	selecao1           =  elemento { letra = preto, fundo = cinza6 },
 	selecao2           =  elemento { letra = preto, fundo = cinza2 },
 	cursor1            =  elemento { letra = preto, fundo = branco },
@@ -276,7 +276,7 @@ local garbo = estilo {
 	status3            =  elemento { letra = branco, fundo = cinza1 },
 	elemento_ativo     =  elemento { letra = cinza8 },
 	decorativos        =  elemento { letra = preto },
-	atencao            =  elemento { fundo = cinza3 },
+	atencao            =  elemento { letra = cinza7, atributos = { sublinhado } },
 }
 
 -- Vim

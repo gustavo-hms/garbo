@@ -23,4 +23,4 @@ set -U fish_pager_color_description fffb79
 set -U fish_pager_color_prefix white --bold --underline
 set -U fish_pager_color_progress brwhite --background=cyan
 set -U fish_color_comment 595d68 
-set -U fish_color_match  --bold --underline
+set -U fish_color_match  --bold

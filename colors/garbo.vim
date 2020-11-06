@@ -49,11 +49,11 @@ hi SpellBad guibg=NONE guifg=NONE gui=underline
 hi SpellCap guibg=NONE guifg=NONE gui=italic
 hi SpellRare guibg=NONE guifg=NONE gui=italic
 hi SpellLocal guibg=NONE guifg=NONE gui=italic
-hi MatchParen guibg=#2e3036 guifg=NONE gui=bold,italic
+hi MatchParen guibg=#2e3036 guifg=NONE gui=bold
 hi DiffAdd guibg=#151515
 hi DiffChange guibg=NONE
 hi DiffDelete guibg=NONE guifg=#555555 gui=NONE
-hi DiffText guibg=#373940 guifg=NONE gui=NONE
+hi DiffText guibg=NONE guifg=#838999 gui=underline
 hi EndOfBuffer guifg=black
 
 " Highlight groups for plugins

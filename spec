@@ -209,16 +209,16 @@ local vermelho      = cor(0xfa2a2a)
 local vermelho_vivo = cor(0xff0000)
 
 -- Do mais escuro pro mais claro
-local cinza0 = cor(0x111114)
-local cinza1 = cor(0x1c1d21)
-local cinza2 = cor(0x2e3036)
-local cinza3 = cor(0x373940)
-local cinza4 = cor(0x414153)
-local cinza5 = cor(0x595d68)
-local cinza6 = cor(0x6a6f7c)
-local cinza7 = cor(0x838999)
-local cinza8 = cor(0xc0c7df)
-local cinza9 = cor(0xcbd4ec)
+local cinza0  = cor(0x111114)
+local cinza1  = cor(0x1c1d21)
+local cinza2  = cor(0x2e3036)
+local cinza3  = cor(0x373940)
+local cinza4  = cor(0x414153)
+local cinza5  = cor(0x595d68)
+local cinza6  = cor(0x6a6f7c)
+local cinza7  = cor(0x838999)
+local cinza8  = cor(0xc0c7df)
+local cinza9  = cor(0xcbd4ec)
 local cinza10 = cor(0xdbe6ff)
 
 local negrito    = atributo "negrito"
@@ -254,29 +254,29 @@ local garbo = estilo {
 	lista        = elemento { letra = branco },
 
 	-- UI
-	elemento_casado    =  elemento { atributos = { negrito }, fundo = cinza2 },
-	selecao1           =  elemento { letra = preto, fundo = cinza6 },
-	selecao2           =  elemento { letra = preto, fundo = cinza2 },
-	cursor1            =  elemento { letra = preto, fundo = branco },
-	cursor2            =  elemento { letra = preto, fundo = cinza5 },
-	cursor3            =  elemento { letra = preto, fundo = cinza6 },
-	cursor4            =  elemento { letra = preto, fundo = cinza3 },
-	menu1              =  elemento { letra = branco, fundo = cinza1, },
-	menu2              =  elemento { letra = branco, fundo = cinza0},
-	menu2_invertido    =  elemento { letra = laranja_vivo, fundo = preto },
-	selecao_do_menu    =  elemento { letra = preto, fundo = laranja },
-	informacao_do_menu =  elemento { letra = verde },
-	busca              =  elemento { letra = azul_claro, atributos = { negrito } },
-	busca_incremental  =  elemento { letra = azul_claro, atributos = { inverso } },
-	linha_atual        =  elemento { fundo = cinza1 },
-	elemento_de_fundo  =  elemento { letra = cinza3 },
-	status_ativo       =  elemento { letra = cinza5, fundo = cinza1 },
-	status1            =  elemento { letra = cinza5, fundo = cinza0 },
-	status2            =  elemento { letra = branco, fundo = cinza0 },
-	status3            =  elemento { letra = branco, fundo = cinza1 },
-	elemento_ativo     =  elemento { letra = cinza8 },
-	decorativos        =  elemento { letra = preto },
-	atencao            =  elemento { letra = cinza7, atributos = { sublinhado } },
+	elemento_casado    = elemento { atributos = { negrito }, fundo = cinza2 },
+	selecao1           = elemento { letra = preto, fundo = cinza6 },
+	selecao2           = elemento { letra = preto, fundo = cinza2 },
+	cursor1            = elemento { letra = preto, fundo = branco },
+	cursor2            = elemento { letra = preto, fundo = cinza5 },
+	cursor3            = elemento { letra = preto, fundo = cinza6 },
+	cursor4            = elemento { letra = preto, fundo = cinza3 },
+	menu1              = elemento { letra = branco, fundo = cinza1, },
+	menu2              = elemento { letra = branco, fundo = cinza0},
+	menu2_invertido    = elemento { letra = laranja_vivo, fundo = preto },
+	selecao_do_menu    = elemento { letra = preto, fundo = laranja },
+	informacao_do_menu = elemento { letra = verde },
+	busca              = elemento { letra = azul_claro, atributos = { negrito } },
+	busca_incremental  = elemento { letra = azul_claro, atributos = { inverso } },
+	linha_atual        = elemento { fundo = cinza1 },
+	elemento_de_fundo  = elemento { letra = cinza3 },
+	status_ativo       = elemento { letra = cinza5, fundo = cinza1 },
+	status1            = elemento { letra = cinza5, fundo = cinza0 },
+	status2            = elemento { letra = branco, fundo = cinza0 },
+	status3            = elemento { letra = branco, fundo = cinza1 },
+	elemento_ativo     = elemento { letra = cinza8 },
+	decorativos        = elemento { letra = preto },
+	atencao            = elemento { letra = cinza7, atributos = { sublinhado } },
 }
 
 -- Vim

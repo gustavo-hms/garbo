@@ -41,7 +41,7 @@ face global MenuInfo rgb:00b982,default
 face global Information rgb:ccd0da,rgb:1c1d21
 face global Error rgb:fa2a2a,default+b
 face global StatusLine rgb:ccd0da,rgb:1c1d21
-face global StatusLineMode rgb:ccd0da,rgb:1c1d21+r
+face global StatusLineMode rgb:00b982,default
 face global StatusLineInfo rgb:7a80ee,default
 face global StatusLineValue green,default
 face global StatusCursor rgb:000000,rgb:ccd0da

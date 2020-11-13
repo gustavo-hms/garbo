@@ -37,11 +37,11 @@ face global LineNumberCursor $palavra_chave
 face global WrapMarker $elemento_de_fundo
 face global MenuForeground $selecao_do_menu
 face global MenuBackground $menu1
-face global MenuInfo $informacao_do_menu
+face global MenuInfo $informacao
 face global Information $menu2
 face global Error $erro
 face global StatusLine $status3
-face global StatusLineMode $menu2_invertido
+face global StatusLineMode $informacao
 face global StatusLineInfo $titulo
 face global StatusLineValue green,default
 face global StatusCursor $cursor1

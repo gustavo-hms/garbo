@@ -35,13 +35,13 @@ face global LineNumbers rgb:373940,default
 face global LineNumbersWrapped rgb:000000,default
 face global LineNumberCursor rgb:fffb79,default
 face global WrapMarker rgb:373940,default
-face global MenuForeground rgb:000000,rgb:9d4125
+face global MenuForeground rgb:ccd0da,rgb:111114+r
 face global MenuBackground rgb:ccd0da,rgb:111114
 face global MenuInfo rgb:00b982,default
 face global Information rgb:ccd0da,rgb:1c1d21
 face global Error rgb:fa2a2a,default+b
 face global StatusLine rgb:ccd0da,rgb:1c1d21
-face global StatusLineMode rgb:df4102,rgb:000000
+face global StatusLineMode rgb:ccd0da,rgb:1c1d21+r
 face global StatusLineInfo rgb:7a80ee,default
 face global StatusLineValue green,default
 face global StatusCursor rgb:000000,rgb:ccd0da

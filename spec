@@ -199,6 +199,7 @@ local preto         = cor(0x000000)
 local azul          = cor(0x7a80ee)
 local azul_escuro   = cor(0x5656e6)
 local azul_claro    = cor(0x00e2ff)
+local azul_fosco    = cor(0x2a2a32)
 local verde         = cor(0x00b982)
 local amarelo       = cor(0xfffb79)
 local rosa1         = cor(0xd3005b)
@@ -252,7 +253,8 @@ local garbo = estilo {
 	lista        = elemento { letra = branco },
 
 	-- UI
-	elemento_casado    = elemento { atributos = { negrito }, fundo = cinza2 },
+	elemento_casado    = elemento { letra = vermelho },
+	referencia         = elemento { fundo = azul_fosco },
 	selecao1           = elemento { letra = preto, fundo = cinza6 },
 	selecao2           = elemento { letra = preto, fundo = cinza2 },
 	cursor1            = elemento { letra = preto, fundo = branco },

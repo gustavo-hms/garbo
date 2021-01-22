@@ -52,3 +52,4 @@ face global BufferPadding rgb:111111+F
 # kak-lsp
 face global DiagnosticError $atencao
 face global DiagnosticWarning $italico
+face global Reference $referencia

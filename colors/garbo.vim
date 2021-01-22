@@ -37,8 +37,8 @@ hi SignColumn guibg=NONE
 hi NonText guifg=#1c1d21 gui=NONE
 hi Folded guibg=NONE guifg=#595d68 gui=NONE
 hi FoldColumn guibg=NONE guifg=#373940 gui=NONE
-hi Pmenu guibg=#111114 guifg=#ccd0da gui=NONE
-hi PmenuSel guibg=#111114 guifg=#ccd0da gui=reverse
+hi Pmenu guibg=#1c1d21 guifg=#ccd0da gui=NONE
+hi PmenuSel guibg=#1c1d21 guifg=#ccd0da gui=reverse
 hi VertSplit guibg=NONE guifg=#373940 gui=NONE
 hi StatusLine guibg=#1c1d21 guifg=#595d68 gui=NONE
 hi StatusLineNC guibg=#111114 guifg=#595d68 gui=NONE

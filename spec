@@ -237,7 +237,7 @@ local garbo = estilo {
 	especial      = elemento { letra = vermelho_vivo },
 	erro          = elemento { letra = vermelho, atributos = { negrito } },
 	todo          = elemento { letra = preto, fundo = vermelho },
-	comentario    = elemento { letra = cinza5 },
+	comentario    = elemento { letra = cinza6 },
 	operador      = elemento { letra = cinza7 },
 
 	-- Markup

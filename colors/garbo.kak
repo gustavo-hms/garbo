@@ -8,7 +8,7 @@ face global string rgb:ff1ea1,default
 face global keyword rgb:fffb79,default
 face global operator rgb:838999,default
 face global attribute rgb:ff0000,default
-face global comment rgb:595d68,default
+face global comment rgb:6a6f7c,default
 face global meta rgb:5656e6,default
 face global builtin rgb:7a80ee,default
 

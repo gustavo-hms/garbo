@@ -16,7 +16,7 @@ hi Normal guibg=NONE guifg=#ccd0da gui=NONE
 hi Visual guibg=#6a6f7c guifg=#000000 gui=NONE
 hi Constant guibg=NONE guifg=#d3005b gui=bold
 hi String guibg=NONE guifg=#ff1ea1 gui=NONE
-hi Comment guibg=NONE guifg=#595d68 gui=NONE
+hi Comment guibg=NONE guifg=#6a6f7c gui=NONE
 hi Type guibg=NONE guifg=#00b982 gui=NONE
 hi Identifier guibg=NONE guifg=#7a80ee gui=NONE
 hi Function guibg=NONE guifg=#7a80ee gui=NONE
@@ -35,7 +35,7 @@ hi Conceal guibg=NONE guifg=#ccd0da gui=NONE
 hi LineNr guibg=NONE guifg=#373940 gui=NONE
 hi SignColumn guibg=NONE
 hi NonText guifg=#1c1d21 gui=NONE
-hi Folded guibg=NONE guifg=#595d68 gui=NONE
+hi Folded guibg=NONE guifg=#6a6f7c gui=NONE
 hi FoldColumn guibg=NONE guifg=#373940 gui=NONE
 hi Pmenu guibg=#1c1d21 guifg=#ccd0da gui=NONE
 hi PmenuSel guibg=#1c1d21 guifg=#ccd0da gui=reverse
@@ -58,5 +58,6 @@ hi EndOfBuffer guifg=black
 
 " Highlight groups for plugins
 hi CocUnderline guibg=#151515
-hi link CocCodeLens Comment
+hi link CocCodeLens LineNr
 hi link NeomakeVirtualtextWarning Comment
+hi CocHighlightText guibg=#2a2a32 guifg=NONE gui=NONE

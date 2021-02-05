@@ -58,5 +58,6 @@ hi EndOfBuffer guifg=black
 
 " Highlight groups for plugins
 hi CocUnderline guibg=#151515
-hi link CocCodeLens Comment
+hi link CocCodeLens LineNr
 hi link NeomakeVirtualtextWarning Comment
+hi CocHighlightText $referencia

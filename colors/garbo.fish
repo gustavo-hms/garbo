@@ -12,7 +12,7 @@ set -U fish_color_history_current --bold
 set -U fish_color_operator 7a80ee 
 set -U fish_color_escape 838999 
 set -U fish_color_cwd 00b982 
-set -U fish_color_cwd_root ff0000 
+set -U fish_color_cwd_root ef2745 
 set -U fish_color_valid_path --underline
 set -U fish_color_autosuggestion 373940 
 set -U fish_color_user fffb79 
@@ -23,4 +23,4 @@ set -U fish_pager_color_description fffb79
 set -U fish_pager_color_prefix white --bold --underline
 set -U fish_pager_color_progress brwhite --background=cyan
 set -U fish_color_comment 6a6f7c 
-set -U fish_color_match fa2a2a 
+set -U fish_color_match ef2745 

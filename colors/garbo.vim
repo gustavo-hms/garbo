@@ -22,10 +22,10 @@ hi Identifier guibg=NONE guifg=#7a80ee gui=NONE
 hi Function guibg=NONE guifg=#7a80ee gui=NONE
 hi Statement guibg=NONE guifg=#fffb79 gui=NONE
 hi PreProc guibg=NONE guifg=#5656e6 gui=NONE
-hi Special guibg=NONE guifg=#ff0000 gui=NONE
+hi Special guibg=NONE guifg=#ef2745 gui=NONE
 hi SpecialKey guifg=#414153
-hi Error guibg=NONE guifg=#fa2a2a gui=bold
-hi Todo guibg=#fa2a2a guifg=#000000 gui=NONE
+hi Error guibg=NONE guifg=#ef2745 gui=bold
+hi Todo guibg=#ef2745 guifg=#000000 gui=NONE
 hi Search guibg=NONE guifg=#00e2ff gui=bold
 hi IncSearch guibg=NONE guifg=#00e2ff gui=reverse
 hi CursorLine guibg=#1c1d21 guifg=NONE gui=NONE
@@ -49,7 +49,7 @@ hi SpellBad guibg=NONE guifg=NONE gui=underline
 hi SpellCap guibg=NONE guifg=NONE gui=italic
 hi SpellRare guibg=NONE guifg=NONE gui=italic
 hi SpellLocal guibg=NONE guifg=NONE gui=italic
-hi MatchParen guibg=NONE guifg=#fa2a2a gui=NONE
+hi MatchParen guibg=NONE guifg=#ef2745 gui=NONE
 hi DiffAdd guibg=#151515
 hi DiffChange guibg=NONE
 hi DiffDelete guibg=NONE guifg=#555555 gui=NONE

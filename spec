@@ -204,8 +204,7 @@ local verde         = cor(0x00b982)
 local amarelo       = cor(0xfffb79)
 local rosa1         = cor(0xd3005b)
 local rosa2         = cor(0xff1ea1)
-local vermelho      = cor(0xfa2a2a)
-local vermelho_vivo = cor(0xff0000)
+local vermelho      = cor(0xef2745)
 
 -- Do mais escuro pro mais claro
 local cinza0  = cor(0x111114)
@@ -234,7 +233,7 @@ local garbo = estilo {
 	tipo          = elemento { letra = verde },
 	funcao        = elemento { letra = azul },
 	meta          = elemento { letra = azul_escuro },
-	especial      = elemento { letra = vermelho_vivo },
+	especial      = elemento { letra = vermelho },
 	erro          = elemento { letra = vermelho, atributos = { negrito } },
 	todo          = elemento { letra = preto, fundo = vermelho },
 	comentario    = elemento { letra = cinza6 },

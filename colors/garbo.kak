@@ -7,7 +7,7 @@ face global function rgb:7a80ee,default
 face global string rgb:ff1ea1,default
 face global keyword rgb:fffb79,default
 face global operator rgb:838999,default
-face global attribute rgb:ff0000,default
+face global attribute rgb:ef2745,default
 face global comment rgb:6a6f7c,default
 face global meta rgb:5656e6,default
 face global builtin rgb:7a80ee,default
@@ -39,14 +39,14 @@ face global MenuForeground rgb:ccd0da,rgb:1c1d21+r
 face global MenuBackground rgb:ccd0da,rgb:1c1d21
 face global MenuInfo rgb:00b982,default
 face global Information rgb:ccd0da,rgb:1c1d21
-face global Error rgb:fa2a2a,default+b
+face global Error rgb:ef2745,default+b
 face global StatusLine rgb:ccd0da,rgb:1c1d21
 face global StatusLineMode rgb:00b982,default
 face global StatusLineInfo rgb:7a80ee,default
 face global StatusLineValue green,default
 face global StatusCursor rgb:000000,rgb:ccd0da
 face global Prompt rgb:fffb79,default
-face global MatchingChar rgb:fa2a2a,default
+face global MatchingChar rgb:ef2745,default
 face global BufferPadding rgb:111111+F
 
 # kak-lsp

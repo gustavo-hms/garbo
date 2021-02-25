@@ -248,7 +248,7 @@ local garbo = estilo {
 	monoespacado = elemento { letra = verde },
 	bloco        = elemento { letra = cinza5, atributos = { negrito } },
 	link         = elemento { letra = azul },
-	item         = elemento { letra = azul_claro },
+	item         = elemento { letra = amarelo },
 	lista        = elemento { letra = branco },
 
 	-- UI

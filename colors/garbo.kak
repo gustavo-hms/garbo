@@ -20,7 +20,7 @@ face global italic default,default+i
 face global mono rgb:00b982,default
 face global block rgb:595d68,default+b
 face global link rgb:7a80ee,default
-face global bullet rgb:00e2ff,default
+face global bullet rgb:fffb79,default
 face global list rgb:ccd0da,default
 
 # builtin faces

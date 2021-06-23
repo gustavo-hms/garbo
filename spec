@@ -196,9 +196,9 @@ end
 local branco        = cor(0xccd0da)
 local branco_fosco  = cor(0xaaadb4)
 local preto         = cor(0x000000)
-local azul          = cor(0x7a80ee)
-local azul_escuro   = cor(0x5656e6)
-local azul_claro    = cor(0x00e2ff)
+local cianuro       = cor(0x00e2ff)
+local azul_claro    = cor(0x7a80ee)
+local azul          = cor(0x5656e6)
 local azul_fosco    = cor(0x2a2a32)
 local verde         = cor(0x00b982)
 local amarelo       = cor(0xfffb79)
@@ -231,8 +231,8 @@ local garbo = estilo {
 	string        = elemento { letra = rosa2 },
 	palavra_chave = elemento { letra = amarelo },
 	tipo          = elemento { letra = verde },
-	funcao        = elemento { letra = azul },
-	meta          = elemento { letra = azul_escuro },
+	funcao        = elemento { letra = azul_claro },
+	meta          = elemento { letra = azul },
 	especial      = elemento { letra = vermelho },
 	erro          = elemento { letra = vermelho, atributos = { negrito } },
 	todo          = elemento { letra = preto, fundo = vermelho },
@@ -240,14 +240,14 @@ local garbo = estilo {
 	operador      = elemento { letra = cinza7 },
 
 	-- Markup
-	titulo       = elemento { letra = azul },
+	titulo       = elemento { letra = azul_claro },
 	cabecalho    = elemento { letra = rosa1 },
 	negrito      = elemento { atributos = { negrito } },
 	italico      = elemento { atributos = { italico } },
 	sublinhado   = elemento { atributos = { sublinhado } },
 	monoespacado = elemento { letra = verde },
 	bloco        = elemento { letra = cinza5, atributos = { negrito } },
-	link         = elemento { letra = azul },
+	link         = elemento { letra = azul_claro },
 	item         = elemento { letra = amarelo },
 	lista        = elemento { letra = branco },
 
@@ -255,17 +255,17 @@ local garbo = estilo {
 	elemento_casado    = elemento { letra = vermelho },
 	referencia         = elemento { fundo = azul_fosco },
 	selecao1           = elemento { letra = preto, fundo = cinza6 },
-	selecao2           = elemento { letra = preto, fundo = cinza2 },
+	selecao2           = elemento { letra = preto, fundo = cinza4 },
 	cursor1            = elemento { letra = preto, fundo = branco },
-	cursor2            = elemento { letra = preto, fundo = cinza5 },
+	cursor2            = elemento { letra = preto, fundo = cinza7 },
 	cursor3            = elemento { letra = preto, fundo = cinza6 },
 	cursor4            = elemento { letra = preto, fundo = cinza3 },
 	menu1              = elemento { letra = branco, fundo = cinza1 },
 	menu2              = elemento { letra = branco, fundo = cinza1 },
 	selecao_do_menu    = elemento { letra = branco, fundo = cinza1, atributos = { inverso } },
 	informacao         = elemento { letra = verde },
-	busca              = elemento { letra = azul_claro, atributos = { negrito } },
-	busca_incremental  = elemento { letra = azul_claro, atributos = { inverso } },
+	busca              = elemento { letra = cianuro, atributos = { negrito } },
+	busca_incremental  = elemento { letra = cianuro, atributos = { inverso } },
 	linha_atual        = elemento { fundo = cinza1 },
 	elemento_de_fundo  = elemento { letra = cinza3 },
 	status_ativo       = elemento { letra = cinza5, fundo = cinza1 },

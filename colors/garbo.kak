@@ -26,10 +26,10 @@ face global list rgb:ccd0da,default
 # builtin faces
 face global Default rgb:ccd0da,default
 face global PrimarySelection rgb:000000,rgb:6a6f7c
-face global SecondarySelection rgb:000000,rgb:2e3036
+face global SecondarySelection rgb:000000,rgb:414153
 face global PrimaryCursor rgb:000000,rgb:ccd0da
 face global SecondaryCursor rgb:000000,rgb:6a6f7c
-face global PrimaryCursorEol rgb:000000,rgb:595d68
+face global PrimaryCursorEol rgb:000000,rgb:838999
 face global SecondaryCursorEol rgb:000000,rgb:373940
 face global LineNumbers rgb:373940,default
 face global LineNumbersWrapped rgb:000000,default

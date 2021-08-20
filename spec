@@ -5,34 +5,34 @@ function cor(valor)
 
 	function c:modo_vim()
 		self.__tostring = function()
-		    if self.valor == "nenhuma" then
-    		    return "NONE"
-		    end
+			if self.valor == "nenhuma" then
+				return "NONE"
+			end
 
-		    -- Deal with transparency
- 		    local valor = self.valor > 0xffffff and self.valor//0x100 or self.valor
+			-- Deal with transparency
+			local valor = self.valor > 0xffffff and self.valor//0x100 or self.valor
 			return string.format("#%06x", valor)
 		end
 	end
 
 	function c:modo_kakoune()
 		self.__tostring = function()
-		    if self.valor == "nenhuma" then
-    		    return "default"
-		    end
+			if self.valor == "nenhuma" then
+				return "default"
+			end
 
-		    local format = self.valor > 0xffffff and "rgba:%08x" or "rgb:%06x"
+			local format = self.valor > 0xffffff and "rgba:%08x" or "rgb:%06x"
 			return string.format(format, self.valor)
 		end
 	end
 
 	function c:modo_fish()
 		self.__tostring = function()
-		    if self.valor == "nenhuma" then
-    		    return ""
-		    end
+			if self.valor == "nenhuma" then
+				return ""
+			end
 
- 		    local valor = self.valor > 0xffffff and self.valor//0x100 or self.valor
+			local valor = self.valor > 0xffffff and self.valor//0x100 or self.valor
 			return string.format("%06x", valor)
 		end
 	end

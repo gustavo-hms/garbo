@@ -25,16 +25,16 @@ face global list rgb:ccd0da,default
 
 # builtin faces
 face global Default rgb:ccd0da,default
-face global PrimarySelection rgb:000000,rgb:6a6f7c
-face global SecondarySelection rgb:000000,rgb:414153
+face global PrimarySelection rgba:ffffff77,rgb:3d3e53
+face global SecondarySelection rgba:66666677,rgb:2e2e3e
 face global PrimaryCursor rgb:000000,rgb:ccd0da
 face global SecondaryCursor rgb:000000,rgb:6a6f7c
 face global PrimaryCursorEol rgb:000000,rgb:838999
-face global SecondaryCursorEol rgb:000000,rgb:373940
-face global LineNumbers rgb:373940,default
+face global SecondaryCursorEol rgb:000000,rgb:373941
+face global LineNumbers rgb:373941,default
 face global LineNumbersWrapped rgb:000000,default
 face global LineNumberCursor rgb:fffb79,default
-face global WrapMarker rgb:373940,default
+face global WrapMarker rgb:373941,default
 face global MenuForeground rgb:ccd0da,rgb:1c1d21+r
 face global MenuBackground rgb:ccd0da,rgb:1c1d21
 face global MenuInfo rgb:00b982,default
@@ -52,4 +52,4 @@ face global BufferPadding rgb:111111+F
 # kak-lsp
 face global DiagnosticError rgb:838999,default+u
 face global DiagnosticWarning default,default+i
-face global Reference default,rgb:2a2a32
+face global Reference rgba:5b5d7caa,default

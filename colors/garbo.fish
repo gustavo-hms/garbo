@@ -6,7 +6,7 @@ set -U fish_color_redirection 00afff
 set -U fish_color_end 009900
 set -U fish_color_error ff0000
 set -U fish_color_param ccd0da 
-set -U fish_color_selection 000000 
+set -U fish_color_selection ffffff 
 set -U fish_color_search_match 00e2ff --bold
 set -U fish_color_history_current --bold
 set -U fish_color_operator 7a80ee 
@@ -14,7 +14,7 @@ set -U fish_color_escape 838999
 set -U fish_color_cwd 00b982 
 set -U fish_color_cwd_root ef2745 
 set -U fish_color_valid_path --underline
-set -U fish_color_autosuggestion 373940 
+set -U fish_color_autosuggestion 373941 
 set -U fish_color_user fffb79 
 set -U fish_color_host d3005b --bold
 set -U fish_color_cancel -r

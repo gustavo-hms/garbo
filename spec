@@ -5,19 +5,35 @@ function cor(valor)
 
 	function c:modo_vim()
 		self.__tostring = function()
-			return valor == "nenhuma" and "NONE" or string.format("#%06x", self.valor)
+		    if self.valor == "nenhuma" then
+    		    return "NONE"
+		    end
+
+		    -- Deal with transparency
+ 		    local valor = self.valor > 0xffffff and self.valor//0x100 or self.valor
+			return string.format("#%06x", valor)
 		end
 	end
 
 	function c:modo_kakoune()
 		self.__tostring = function()
-			return valor == "nenhuma" and "default" or string.format("rgb:%06x", self.valor)
+		    if self.valor == "nenhuma" then
+    		    return "default"
+		    end
+
+		    local format = self.valor > 0xffffff and "rgba:%08x" or "rgb:%06x"
+			return string.format(format, self.valor)
 		end
 	end
 
 	function c:modo_fish()
 		self.__tostring = function()
-			return valor == "nenhuma" and "" or string.format("%06x", self.valor)
+		    if self.valor == "nenhuma" then
+    		    return ""
+		    end
+
+ 		    local valor = self.valor > 0xffffff and self.valor//0x100 or self.valor
+			return string.format("%06x", valor)
 		end
 	end
 
@@ -193,31 +209,36 @@ end
 --------------------------- Especificação do estilo --------------------------
 
 
-local branco        = cor(0xccd0da)
-local branco_fosco  = cor(0xaaadb4)
-local preto         = cor(0x000000)
-local cianuro       = cor(0x00e2ff)
-local azul_claro    = cor(0x7a80ee)
-local azul          = cor(0x5656e6)
-local azul_fosco    = cor(0x2a2a32)
-local verde         = cor(0x00b982)
-local amarelo       = cor(0xfffb79)
-local rosa1         = cor(0xd3005b)
-local rosa2         = cor(0xff1ea1)
-local vermelho      = cor(0xef2745)
+local branco              = cor(0xccd0da)
+local branco_translucido1 = cor(0x66666677)
+local branco_translucido2 = cor(0xffffff77)
+local preto               = cor(0x000000)
+local cianuro             = cor(0x00e2ff)
+local azul_claro          = cor(0x7a80ee)
+local azul                = cor(0x5656e6)
+local azul_fosco          = cor(0x2a2a32)
+local verde               = cor(0x00b982)
+local amarelo             = cor(0xfffb79)
+local rosa1               = cor(0xd3005b)
+local rosa2               = cor(0xff1ea1)
+local vermelho            = cor(0xef2745)
 
 -- Do mais escuro pro mais claro
 local cinza0  = cor(0x111114)
 local cinza1  = cor(0x1c1d21)
-local cinza2  = cor(0x2e3036)
-local cinza3  = cor(0x373940)
-local cinza4  = cor(0x414153)
+local cinza2  = cor(0x2e2f36)
+local cinza3  = cor(0x373941)
+local cinza4  = cor(0x41444d)
 local cinza5  = cor(0x595d68)
 local cinza6  = cor(0x6a6f7c)
 local cinza7  = cor(0x838999)
 local cinza8  = cor(0xc0c7df)
 local cinza9  = cor(0xcbd4ec)
 local cinza10 = cor(0xdbe6ff)
+
+local cinza_azulado1    = cor(0x2e2e3e)
+local cinza_azulado2    = cor(0x3d3e53)
+local cinza_translucido = cor(0x5b5d7caa)
 
 local negrito    = atributo "negrito"
 local italico    = atributo "italico"
@@ -253,9 +274,9 @@ local garbo = estilo {
 
 	-- UI
 	elemento_casado    = elemento { letra = vermelho },
-	referencia         = elemento { fundo = azul_fosco },
-	selecao1           = elemento { letra = preto, fundo = cinza6 },
-	selecao2           = elemento { letra = preto, fundo = cinza4 },
+	referencia         = elemento { letra = cinza_translucido },
+	selecao1           = elemento { letra = branco_translucido2, fundo = cinza_azulado2 },
+	selecao2           = elemento { letra = branco_translucido1, fundo = cinza_azulado1 },
 	cursor1            = elemento { letra = preto, fundo = branco },
 	cursor2            = elemento { letra = preto, fundo = cinza7 },
 	cursor3            = elemento { letra = preto, fundo = cinza6 },

@@ -52,4 +52,4 @@ face global BufferPadding rgb:111111+F
 # kak-lsp
 face global DiagnosticError rgb:838999,default+u
 face global DiagnosticWarning default,default+i
-face global Reference rgba:5b5d7caa,default
+face global Reference rgba:5b5d7caa,default+a

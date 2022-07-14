@@ -53,11 +53,11 @@ hi MatchParen guibg=NONE guifg=#ef2745 gui=NONE
 hi DiffAdd guibg=#151515
 hi DiffChange guibg=NONE
 hi DiffDelete guibg=NONE guifg=#555555 gui=NONE
-hi DiffText guibg=NONE guifg=#838999 gui=underline
+hi DiffText guibg=NONE guifg=NONE gui=underline
 hi EndOfBuffer guifg=black
 
 " Highlight groups for plugins
 hi CocUnderline guibg=#151515
 hi link CocCodeLens LineNr
 hi link NeomakeVirtualtextWarning Comment
-hi CocHighlightText guibg=NONE guifg=#5b5d7c gui=NONE
+hi CocHighlightText guibg=NONE guifg=NONE gui=underline

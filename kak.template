@@ -11,6 +11,7 @@ face global attribute $especial
 face global comment $comentario
 face global meta $meta
 face global builtin $funcao
+face global parameter $parametro
 
 # For markup
 face global title $titulo
@@ -52,4 +53,4 @@ face global BufferPadding rgb:111111+F
 # kak-lsp
 face global DiagnosticError $atencao
 face global DiagnosticWarning $italico
-face global Reference $referencia+a
+face global Reference $referencia

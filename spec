@@ -146,6 +146,7 @@ end
 function elemento(spec)
 	spec.fundo = spec.fundo or cor "nenhuma"
 	spec.letra = spec.letra or cor "nenhuma"
+	spec.sublinhado = spec.sublinhado or cor "nenhuma"
 	spec.atributos = spec.atributos and atributos(spec.atributos) or atributos {}
 
 	function spec:modo_vim()
@@ -161,10 +162,11 @@ function elemento(spec)
 	function spec:modo_kakoune()
 		self.fundo:modo_kakoune()
 		self.letra:modo_kakoune()
+		self.sublinhado:modo_kakoune()
 		self.atributos:modo_kakoune()
 
 		self.__tostring = function()
-			return string.format("%s,%s%s", self.letra, self.fundo, self.atributos)
+			return string.format("%s,%s,%s%s", self.letra, self.fundo, self.sublinhado, self.atributos)
 		end
 	end
 
@@ -249,6 +251,7 @@ local garbo = estilo {
 	-- Código
 	texto         = elemento { letra = branco },
 	constante     = elemento { letra = rosa1, atributos = { negrito } },
+	parametro     = elemento { letra = cinza7 },
 	string        = elemento { letra = rosa2 },
 	palavra_chave = elemento { letra = amarelo },
 	tipo          = elemento { letra = verde },
@@ -274,7 +277,7 @@ local garbo = estilo {
 
 	-- UI
 	elemento_casado    = elemento { letra = vermelho },
-	referencia         = elemento { letra = cinza_translucido },
+	referencia         = elemento { sublinhado = cinza4, atributos = { sublinhado} },
 	selecao1           = elemento { letra = branco_translucido2, fundo = cinza_azulado2 },
 	selecao2           = elemento { letra = branco_translucido1, fundo = cinza_azulado1 },
 	cursor1            = elemento { letra = preto, fundo = branco },
@@ -295,7 +298,7 @@ local garbo = estilo {
 	status3            = elemento { letra = branco, fundo = cinza1 },
 	elemento_ativo     = elemento { letra = cinza8 },
 	decorativos        = elemento { letra = preto },
-	atencao            = elemento { letra = cinza7, atributos = { sublinhado } },
+	atencao            = elemento { sublinhado = vermelho, atributos = { sublinhado } },
 }
 
 -- Vim

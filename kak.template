@@ -51,6 +51,19 @@ face global MatchingChar $elemento_casado
 face global BufferPadding rgb:111111+F
 
 # kak-lsp
-face global DiagnosticError $atencao
-face global DiagnosticWarning $italico
+face global DiagnosticError $diagnostico_erro
+face global DiagnosticWarning $diagnostico_aviso
 face global Reference $referencia
+face global InfoDefault               Information
+face global InfoBlock                 block
+face global InfoBlockQuote            string
+face global InfoBullet                bullet
+face global InfoHeader                header
+face global InfoLink                  link
+face global InfoLinkMono              mono
+face global InfoMono                  mono
+face global InfoRule                  Information
+face global InfoDiagnosticError       Error
+face global InfoDiagnosticHint        $italico
+face global InfoDiagnosticInformation Information
+face global InfoDiagnosticWarning     $diagnostico_aviso2

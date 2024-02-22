@@ -53,7 +53,7 @@ hi MatchParen guibg=NONE guifg=#ef2745 gui=NONE
 hi DiffAdd guibg=#151515
 hi DiffChange guibg=NONE
 hi DiffDelete guibg=NONE guifg=#555555 gui=NONE
-hi DiffText guibg=NONE guifg=NONE gui=underline
+hi DiffText $atencao
 hi EndOfBuffer guifg=black
 
 " Highlight groups for plugins

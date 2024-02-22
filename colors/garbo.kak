@@ -11,7 +11,7 @@ face global attribute rgb:ef2745,default,default
 face global comment rgb:6a6f7c,default,default
 face global meta rgb:5656e6,default,default
 face global builtin rgb:7a80ee,default,default
-face global parameter rgb:838999,default,default
+face global parameter rgb:cbd4ec,default,default
 
 # For markup
 face global title rgb:7a80ee,default,default
@@ -52,5 +52,18 @@ face global BufferPadding rgb:111111+F
 
 # kak-lsp
 face global DiagnosticError default,default,rgb:ef2745+u
-face global DiagnosticWarning default,default,default+i
-face global Reference default,default,rgb:41444d+u
+face global DiagnosticWarning default,default,rgb:595d68+u
+face global Reference default,default,rgb:6a6f7c+u
+face global InfoDefault               Information
+face global InfoBlock                 block
+face global InfoBlockQuote            string
+face global InfoBullet                bullet
+face global InfoHeader                header
+face global InfoLink                  link
+face global InfoLinkMono              mono
+face global InfoMono                  mono
+face global InfoRule                  Information
+face global InfoDiagnosticError       Error
+face global InfoDiagnosticHint        default,default,default+i
+face global InfoDiagnosticInformation Information
+face global InfoDiagnosticWarning     rgb:fffb79,default,default

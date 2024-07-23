@@ -1,4 +1,4 @@
-function cor(valor)
+local function cor(valor)
     local c = { valor = valor }
 
     function c:modo_vim()
@@ -38,7 +38,7 @@ function cor(valor)
     return setmetatable(c, c)
 end
 
-function atributo(valor)
+local function atributo(valor)
     local atrib = { valor = valor }
 
     function atrib:modo_vim()
@@ -77,7 +77,7 @@ function atributo(valor)
     return setmetatable(atrib, atrib)
 end
 
-function atributos(lista)
+local function atributos(lista)
     function lista:modo_vim()
         for _, atributo in ipairs(self) do
             atributo:modo_vim()
@@ -141,7 +141,7 @@ function atributos(lista)
     return setmetatable(lista, lista)
 end
 
-function elemento(spec)
+local function elemento(spec)
     spec.fundo = spec.fundo or cor "nenhuma"
     spec.letra = spec.letra or cor "nenhuma"
     spec.sublinhado = spec.sublinhado or cor "nenhuma"
@@ -182,7 +182,7 @@ function elemento(spec)
     return setmetatable(spec, spec)
 end
 
-function estilo(elementos)
+local function estilo(elementos)
     local e = { elementos = elementos }
 
     function e.modo_vim()
@@ -206,9 +206,39 @@ function estilo(elementos)
     return e
 end
 
+local function azul(cor)
+    return tostring(cor % 256)
+end
+
+local function verde(cor)
+    return tostring(math.floor(cor / 256) % 256)
+end
+
+local function vermelho(cor)
+    return tostring(math.floor(cor / 65536) % 256)
+end
+
+local function konsole(cores)
+    io.input "konsole.template"
+    io.output "colors/Garbo.colorscheme"
+
+    local template = io.read("a")
+
+    for nome, cor in pairs(cores) do
+        template = template:gsub("$" .. nome .. "_r%f[^%w_]", vermelho(cor))
+        template = template:gsub("$" .. nome .. "_g%f[^%w_]", verde(cor))
+        template = template:gsub("$" .. nome .. "_b%f[^%w_]", azul(cor))
+    end
+
+    io.write(template)
+end
+
+
+
 return {
     cor = cor,
     atributo = atributo,
     elemento = elemento,
     estilo = estilo,
+    konsole = konsole,
 }

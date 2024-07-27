@@ -125,8 +125,8 @@ garbo.konsole {
     amarelo_intenso = amarelo:saturado(0.1),
 
     azul = azul,
-    azul_opaco = azul:dessaturado(0.3),
-    azul_intenso = azul:saturado(0.3),
+    azul_opaco = azul_fosco,
+    azul_intenso = azul_claro,
 
     magenta = rosa2,
     magenta_opaco = rosa2:dessaturado(0.3),

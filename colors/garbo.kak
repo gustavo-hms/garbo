@@ -24,7 +24,7 @@ face global link   rgb:7a80ee,default,default
 face global bullet rgb:fffb79,default,default
 face global list   rgb:ccd0da,default,default
 
-# builtin                      faces
+# Builtin faces
 face global Default            rgb:ccd0da,default,default
 face global PrimarySelection   rgba:ffffff77,rgb:3d3e53,default
 face global SecondarySelection rgba:66666677,rgb:2e2e3e,default
@@ -50,7 +50,7 @@ face global Prompt             rgb:fffb79,default,default
 face global MatchingChar       rgb:ef2745,default,default
 face global BufferPadding      rgb:111111+F
 
-# kak-lsp
+# kakoune-lsp
 face global DiagnosticError           default,default,rgb:ef2745+u
 face global DiagnosticWarning         default,default,rgb:595d68+u
 face global Reference                 default,default,rgb:6a6f7c+u

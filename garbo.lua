@@ -1,18 +1,6 @@
 local function cor(valor)
     local c = { valor = valor }
 
-    function c:modo_vim()
-        self.__tostring = function()
-            if self.valor == "nenhuma" then
-                return "NONE"
-            end
-
-            -- Deal with transparency
-            local valor = self.valor > 0xffffff and self.valor // 0x100 or self.valor
-            return string.format("#%06x", valor)
-        end
-    end
-
     function c:modo_kakoune()
         self.__tostring = function()
             if self.valor == "nenhuma" then
@@ -81,17 +69,6 @@ end
 local function atributo(valor)
     local atrib = { valor = valor }
 
-    function atrib:modo_vim()
-        local vim = {
-            sublinhado = "underline",
-            negrito = "bold",
-            italico = "italic",
-            inverso = "reverse"
-        }
-
-        self.__tostring = function() return vim[self.valor] end
-    end
-
     function atrib:modo_kakoune()
         local kakoune = {
             sublinhado = "u",
@@ -118,26 +95,6 @@ local function atributo(valor)
 end
 
 local function atributos(lista)
-    function lista:modo_vim()
-        for _, atributo in ipairs(self) do
-            atributo:modo_vim()
-        end
-
-        self.__tostring = function()
-            if #self == 0 then
-                return "NONE"
-            end
-
-            local elementos = {}
-
-            for i, elemento in ipairs(self) do
-                elementos[i] = tostring(elemento)
-            end
-
-            return table.concat(elementos, ",")
-        end
-    end
-
     function lista:modo_kakoune()
         for _, atributo in ipairs(self) do
             atributo:modo_kakoune()
@@ -187,16 +144,6 @@ local function elemento(spec)
     spec.sublinhado = spec.sublinhado or cor "nenhuma"
     spec.atributos = spec.atributos and atributos(spec.atributos) or atributos {}
 
-    function spec:modo_vim()
-        self.fundo:modo_vim()
-        self.letra:modo_vim()
-        self.atributos:modo_vim()
-
-        self.__tostring = function()
-            return string.format("guibg=%s guifg=%s gui=%s", self.fundo, self.letra, self.atributos)
-        end
-    end
-
     function spec:modo_kakoune()
         self.fundo:modo_kakoune()
         self.letra:modo_kakoune()
@@ -224,12 +171,6 @@ end
 
 local function estilo(elementos)
     local e = { elementos = elementos }
-
-    function e.modo_vim()
-        for _, elem in pairs(elementos) do
-            elem:modo_vim()
-        end
-    end
 
     function e.modo_kakoune()
         for _, elem in pairs(elementos) do

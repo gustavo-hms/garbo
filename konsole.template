@@ -16,83 +16,83 @@ Color=$preto_r,$preto_g,$preto_b
 Color=$preto_opaco_r,$preto_opaco_g,$preto_opaco_b
 
 [Color0Intense]
-Color=$vermelho_intenso_r,$vermelho_intenso_g,$vermelho_intenso_b
+Color=$preto_intenso_r,$preto_intenso_g,$preto_intenso_b
 
 # Vermelho
 [Color1]
 Color=$vermelho_r,$vermelho_g,$vermelho_b
 
 [Color1Faint]
-Color=$verde_opaco_r,$verde_opaco_g,$verde_opaco_b
+Color=$vermelho_opaco_r,$vermelho_opaco_g,$vermelho_opaco_b
 
 [Color1Intense]
-Color=$amarelo_intenso_r,$amarelo_intenso_g,$amarelo_intenso_b
+Color=$vermelho_intenso_r,$vermelho_intenso_g,$vermelho_intenso_b
 
 # Verde
 [Color2]
 Color=$verde_r,$verde_g,$verde_b
 
 [Color2Faint]
-Color=$azul_opaco_r,$azul_opaco_g,$azul_opaco_b
+Color=$verde_opaco_r,$verde_opaco_g,$verde_opaco_b
 
 [Color2Intense]
-Color=$magenta_intenso_r,$magenta_intenso_g,$magenta_intenso_b
+Color=$verde_intenso_r,$verde_intenso_g,$verde_intenso_b
 
 # Amarelo
 [Color3]
 Color=$amarelo_r,$amarelo_g,$amarelo_b
 
 [Color3Faint]
-Color=$cianuro_opaco_r,$cianuro_opaco_g,$cianuro_opaco_b
+Color=$amarelo_opaco_r,$amarelo_opaco_g,$amarelo_opaco_b
 
 [Color3Intense]
-Color=$branco_intenso_r,$branco_intenso_g,$branco_intenso_b
+Color=$amarelo_intenso_r,$amarelo_intenso_g,$amarelo_intenso_b
 
 # Azul
 [Color4]
 Color=$azul_r,$azul_g,$azul_b
 
 [Color4Faint]
-Color=$letra_opaco_r,$letra_opaco_g,$letra_opaco_b
+Color=$azul_opaco_r,$azul_opaco_g,$azul_opaco_b
 
 [Color4Intense]
-Color=$preto_intenso_r,$preto_intenso_g,$preto_intenso_b
+Color=$azul_intenso_r,$azul_intenso_g,$azul_intenso_b
 
 # Magenta
 [Color5]
 Color=$magenta_r,$magenta_g,$magenta_b
 
 [Color5Faint]
-Color=$vermelho_opaco_r,$vermelho_opaco_g,$vermelho_opaco_b
+Color=$magenta_opaco_r,$magenta_opaco_g,$magenta_opaco_b
 
 [Color5Intense]
-Color=$verde_intenso_r,$verde_intenso_g,$verde_intenso_b
+Color=$magenta_intenso_r,$magenta_intenso_g,$magenta_intenso_b
 
 # Cianuro
 [Color6]
 Color=$cianuro_r,$cianuro_g,$cianuro_b
 
 [Color6Faint]
-Color=$amarelo_opaco_r,$amarelo_opaco_g,$amarelo_opaco_b
+Color=$cianuro_opaco_r,$cianuro_opaco_g,$cianuro_opaco_b
 
 [Color6Intense]
-Color=$azul_intenso_r,$azul_intenso_g,$azul_intenso_b
+Color=$cianuro_intenso_r,$cianuro_intenso_g,$cianuro_intenso_b
 
 # Branco
 [Color7]
 Color=$branco_r,$branco_g,$branco_b
 
 [Color7Faint]
-Color=$magenta_opaco_r,$magenta_opaco_g,$magenta_opaco_b
+Color=$branco_opaco_r,$branco_opaco_g,$branco_opaco_b
 
 [Color7Intense]
-Color=$cianuro_intenso_r,$cianuro_intenso_g,$cianuro_intenso_b
+Color=$branco_intenso_r,$branco_intenso_g,$branco_intenso_b
 
 [Foreground]
 Color=$letra_r,$letra_g,$letra_b
 
 [ForegroundFaint]
-Color=$branco_opaco_r,$branco_opaco_g,$branco_opaco_b
+Color=$letra_opaco_r,$letra_opaco_g,$letra_opaco_b
 
 [ForegroundIntense]
 Color=$letra_intenso_r,$letra_intenso_g,$letra_intenso_b
@@ -103,7 +103,7 @@ Blur=true
 ColorRandomization=false
 Description=Garbo
 FillStyle=Tile
-Opacity=0.8
+Opacity=0.75
 Wallpaper=
 WallpaperFlipType=NoFlip
 WallpaperOpacity=1

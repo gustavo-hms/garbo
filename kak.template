@@ -41,7 +41,7 @@ face global MenuBackground     $menu1
 face global MenuInfo           $informacao
 face global Information        $menu2
 face global Error              $erro
-face global StatusLine         $status3
+face global StatusLine         $status
 face global StatusLineMode     $informacao
 face global StatusLineInfo     $titulo
 face global StatusLineValue    green,default

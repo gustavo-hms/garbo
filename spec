@@ -32,7 +32,6 @@ local cinza10             = garbo.cor(0xdbe6ff)
 
 local cinza_azulado1      = garbo.cor(0x2e2e3e)
 local cinza_azulado2      = garbo.cor(0x3d3e53)
-local cinza_translucido   = garbo.cor(0x5b5d7caa)
 
 local negrito             = garbo.atributo "negrito"
 local italico             = garbo.atributo "italico"
@@ -85,10 +84,7 @@ local estilo              = garbo.estilo {
     linha_atual        = garbo.elemento { fundo = cinza1 },
     elemento_de_fundo  = garbo.elemento { letra = cinza3 },
     status_ativo       = garbo.elemento { letra = cinza5, fundo = cinza1 },
-    status1            = garbo.elemento { letra = cinza5, fundo = cinza0 },
-    status2            = garbo.elemento { letra = branco, fundo = cinza0 },
-    status3            = garbo.elemento { letra = branco, fundo = cinza1 },
-    elemento_ativo     = garbo.elemento { letra = cinza8 },
+    status             = garbo.elemento { letra = branco, fundo = cinza1 },
     decorativos        = garbo.elemento { letra = preto },
     diagnostico_erro   = garbo.elemento { sublinhado = vermelho, atributos = { sublinhado } },
     diagnostico_aviso  = garbo.elemento { sublinhado = cinza5, atributos = { sublinhado } },

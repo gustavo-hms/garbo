@@ -248,7 +248,7 @@ return {
     cor = cor,
     atributo = atributo,
     elemento = elemento,
-    estilo = estilo,
+    esquema = estilo,
     konsole = konsole,
     kakoune = kakoune,
     fish = fish,

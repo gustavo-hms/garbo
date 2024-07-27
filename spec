@@ -39,7 +39,7 @@ local italico             = garbo.atributo "italico"
 local sublinhado          = garbo.atributo "sublinhado"
 local inverso             = garbo.atributo "inverso"
 
-local estilo_garboso      = garbo.estilo {
+local estilo              = garbo.estilo {
     -- Código
     texto              = garbo.elemento { letra = branco },
     constante          = garbo.elemento { letra = rosa1, atributos = { negrito } },
@@ -96,44 +96,52 @@ local estilo_garboso      = garbo.estilo {
     phantom_selection  = garbo.elemento { sublinhado = cinza5, atributos = { sublinhado } }
 }
 
--- Vim
+garbo.kakoune(estilo)
+garbo.fish(estilo)
 
-io.input "vim.template"
-io.output "colors/garbo.vim"
+garbo.konsole {
+    fundo = garbo.cor(0x000000),
+    fundo_opaco = garbo.cor(0x000000),
+    fundo_intenso = cinza0,
 
-local template = io.read "a"
-estilo_garboso:modo_vim()
+    letra = branco,
+    letra_opaco = cinza9,
+    letra_intenso = garbo.cor(0xffffff),
 
-for nome, elem in pairs(estilo_garboso.elementos) do
-    template = template:gsub("$" .. nome .. "%f[^%w_]", tostring(elem))
-end
+    preto = garbo.cor(0x000000),
+    preto_opaco = garbo.cor(0x000000),
+    preto_intenso = cinza2,
 
-io.write(template)
+    vermelho = vermelho,
+    -- vermelho = garbo.cor(0xef2745),
+    vermelho_opaco = garbo.cor(0xef2745),
+    vermelho_intenso = rosa1,
 
--- Kakoune
+    verde = verde,
+    -- verde = garbo.cor(0x00b982),
+    verde_opaco = garbo.cor(0x00b982),
+    verde_intenso = garbo.cor(0x00b982),
 
-io.input "kak.template"
-io.output "colors/garbo.kak"
+    amarelo = amarelo,
+    -- amarelo = garbo.cor(0xfffb79),
+    amarelo_opaco = garbo.cor(0xfffb79),
+    amarelo_intenso = garbo.cor(0xfffb79),
 
-template = io.read "a"
-estilo_garboso:modo_kakoune()
+    azul = azul,
+    azul_opaco = azul_fosco,
+    azul_intenso = azul_claro,
 
-for nome, elem in pairs(estilo_garboso.elementos) do
-    template = template:gsub("$" .. nome .. "%f[^%w_]", tostring(elem))
-end
+    magenta = rosa2,
+    -- magenta = garbo.cor(0xff1ea1),
+    magenta_opaco = garbo.cor(0xff1ea1),
+    magenta_intenso = garbo.cor(0xff1ea1),
 
-io.write(template)
+    cianuro = cianuro,
+    -- cianuro = garbo.cor(0x00e2ff),
+    cianuro_opaco = garbo.cor(0x00e2ff),
+    cianuro_intenso = garbo.cor(0x00e2ff),
 
--- Fish
-
-io.input "fish.template"
-io.output "colors/garbo.fish"
-
-template = io.read "a"
-estilo_garboso:modo_fish()
-
-for nome, elem in pairs(estilo_garboso.elementos) do
-    template = template:gsub("$" .. nome .. "%f[^%w_]", tostring(elem))
-end
-
-io.write(template)
+    branco = branco,
+    branco_opaco = cinza9,
+    branco_intenso = garbo.cor(0xccd0da),
+}

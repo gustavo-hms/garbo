@@ -24,7 +24,7 @@ face global link   $link
 face global bullet $item
 face global list   $lista
 
-# builtin                      faces
+# Builtin faces
 face global Default            $texto
 face global PrimarySelection   $selecao1
 face global SecondarySelection $selecao2
@@ -50,7 +50,7 @@ face global Prompt             $palavra_chave
 face global MatchingChar       $elemento_casado
 face global BufferPadding      rgb:111111+F
 
-# kak-lsp
+# kakoune-lsp
 face global DiagnosticError           $diagnostico_erro
 face global DiagnosticWarning         $diagnostico_aviso
 face global Reference                 $referencia

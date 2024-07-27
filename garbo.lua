@@ -35,6 +35,46 @@ local function cor(valor)
         end
     end
 
+    function c:saturado(factor)
+        local comando = string.format(
+            "pastel saturate %f %06x | pastel format",
+            factor,
+            self.valor
+        )
+        local saturada = io.popen(comando):read("a"):gsub("#", "0x")
+        return cor(tonumber(saturada))
+    end
+
+    function c:dessaturado(factor)
+        local comando = string.format(
+            "pastel desaturate %f %06x | pastel format",
+            factor,
+            self.valor
+        )
+        local dessaturada = io.popen(comando):read("a"):gsub("#", "0x")
+        return cor(tonumber(dessaturada))
+    end
+
+    function c:claro(factor)
+        local comando = string.format(
+            "pastel lighten %f %06x | pastel format",
+            factor,
+            self.valor
+        )
+        local clara = io.popen(comando):read("a"):gsub("#", "0x")
+        return cor(tonumber(clara))
+    end
+
+    function c:escuro(factor)
+        local comando = string.format(
+            "pastel darken %f %06x | pastel format",
+            factor,
+            self.valor
+        )
+        local escura = io.popen(comando):read("a"):gsub("#", "0x")
+        return cor(tonumber(escura))
+    end
+
     return setmetatable(c, c)
 end
 
@@ -207,15 +247,15 @@ local function estilo(elementos)
 end
 
 local function azul(cor)
-    return tostring(cor % 256)
+    return tostring(cor.valor % 256)
 end
 
 local function verde(cor)
-    return tostring(math.floor(cor / 256) % 256)
+    return tostring(math.floor(cor.valor / 256) % 256)
 end
 
 local function vermelho(cor)
-    return tostring(math.floor(cor / 65536) % 256)
+    return tostring(math.floor(cor.valor / 65536) % 256)
 end
 
 local function konsole(cores)
@@ -233,6 +273,34 @@ local function konsole(cores)
     io.write(template)
 end
 
+local function kakoune(estilo)
+    io.input "kak.template"
+    io.output "colors/garbo.kak"
+
+    local template = io.read("a")
+    estilo:modo_kakoune()
+
+    for nome, elem in pairs(estilo.elementos) do
+        template = template:gsub("$" .. nome .. "%f[^%w_]", tostring(elem))
+    end
+
+    io.write(template)
+end
+
+local function fish(estilo)
+    io.input "fish.template"
+    io.output "colors/garbo.fish"
+
+    local template = io.read("a")
+    estilo:modo_fish()
+
+    for nome, elem in pairs(estilo.elementos) do
+        template = template:gsub("$" .. nome .. "%f[^%w_]", tostring(elem))
+    end
+
+    io.write(template)
+end
+
 
 
 return {
@@ -241,4 +309,6 @@ return {
     elemento = elemento,
     estilo = estilo,
     konsole = konsole,
+    kakoune = kakoune,
+    fish = fish,
 }

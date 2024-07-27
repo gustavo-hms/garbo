@@ -113,35 +113,30 @@ garbo.konsole {
     preto_intenso = cinza2,
 
     vermelho = vermelho,
-    -- vermelho = garbo.cor(0xef2745),
-    vermelho_opaco = garbo.cor(0xef2745),
+    vermelho_opaco = vermelho:dessaturado(0.3),
     vermelho_intenso = rosa1,
 
     verde = verde,
-    -- verde = garbo.cor(0x00b982),
-    verde_opaco = garbo.cor(0x00b982),
-    verde_intenso = garbo.cor(0x00b982),
+    verde_opaco = verde:dessaturado(0.3),
+    verde_intenso = verde:saturado(0.1),
 
     amarelo = amarelo,
-    -- amarelo = garbo.cor(0xfffb79),
-    amarelo_opaco = garbo.cor(0xfffb79),
-    amarelo_intenso = garbo.cor(0xfffb79),
+    amarelo_opaco = amarelo:dessaturado(0.3),
+    amarelo_intenso = amarelo:saturado(0.1),
 
     azul = azul,
-    azul_opaco = azul_fosco,
-    azul_intenso = azul_claro,
+    azul_opaco = azul:dessaturado(0.3),
+    azul_intenso = azul:saturado(0.3),
 
     magenta = rosa2,
-    -- magenta = garbo.cor(0xff1ea1),
-    magenta_opaco = garbo.cor(0xff1ea1),
-    magenta_intenso = garbo.cor(0xff1ea1),
+    magenta_opaco = rosa2:dessaturado(0.3),
+    magenta_intenso = rosa2:saturado(0.1),
 
     cianuro = cianuro,
-    -- cianuro = garbo.cor(0x00e2ff),
-    cianuro_opaco = garbo.cor(0x00e2ff),
-    cianuro_intenso = garbo.cor(0x00e2ff),
+    cianuro_opaco = cianuro:dessaturado(0.3),
+    cianuro_intenso = cianuro:saturado(0.3),
 
     branco = branco,
     branco_opaco = cinza9,
-    branco_intenso = garbo.cor(0xccd0da),
+    branco_intenso = branco:saturado(0.3),
 }

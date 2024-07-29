@@ -38,7 +38,7 @@ local italico             = estilo.atributo "italico"
 local sublinhado          = estilo.atributo "sublinhado"
 local inverso             = estilo.atributo "inverso"
 
-estilo.esquema {
+estilo.esquema "garbo" {
     -- Cores
     fundo              = estilo.cor(0x000000),
     fundo_opaco        = estilo.cor(0x000000),

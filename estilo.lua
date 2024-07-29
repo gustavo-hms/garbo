@@ -182,9 +182,10 @@ function Elemento:konsole()
     return ""
 end
 
-local function konsole(esquema)
+local function konsole(nome, esquema)
     io.input "konsole.template"
-    io.output "colors/Garbo.colorscheme"
+    local nome = nome:sub(1, 1):upper() .. nome:sub(2)
+    io.output(string.format("colors/%s.colorscheme", nome))
 
     local template = io.read("a")
 
@@ -195,9 +196,9 @@ local function konsole(esquema)
     io.write(template)
 end
 
-local function kakoune(esquema)
+local function kakoune(nome, esquema)
     io.input "kak.template"
-    io.output "colors/garbo.kak"
+    io.output(string.format("colors/%s.kak", nome))
 
     local template = io.read("a")
 
@@ -208,9 +209,9 @@ local function kakoune(esquema)
     io.write(template)
 end
 
-local function fish(esquema)
+local function fish(nome, esquema)
     io.input "fish.template"
-    io.output "colors/garbo.fish"
+    io.output(string.format("colors/%s.fish", nome))
 
     local template = io.read("a")
 
@@ -221,10 +222,12 @@ local function fish(esquema)
     io.write(template)
 end
 
-local function esquema(elementos)
-    konsole(elementos)
-    kakoune(elementos)
-    fish(elementos)
+local function esquema(nome)
+    return function(elementos)
+        konsole(nome, elementos)
+        kakoune(nome, elementos)
+        fish(nome, elementos)
+    end
 end
 
 

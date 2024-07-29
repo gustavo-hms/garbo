@@ -38,7 +38,48 @@ local italico             = estilo.atributo "italico"
 local sublinhado          = estilo.atributo "sublinhado"
 local inverso             = estilo.atributo "inverso"
 
-local estilo              = estilo.esquema {
+estilo.esquema {
+    -- Cores
+    fundo              = estilo.cor(0x000000),
+    fundo_opaco        = estilo.cor(0x000000),
+    fundo_intenso      = cinza0,
+
+    letra              = branco,
+    letra_opaco        = cinza9,
+    letra_intenso      = estilo.cor(0xffffff),
+
+    preto              = estilo.cor(0x000000),
+    preto_opaco        = estilo.cor(0x000000),
+    preto_intenso      = cinza2,
+
+    vermelho           = vermelho,
+    vermelho_opaco     = vermelho:dessaturado(0.3),
+    vermelho_intenso   = rosa1,
+
+    verde              = verde,
+    verde_opaco        = verde:dessaturado(0.3),
+    verde_intenso      = verde:saturado(0.1),
+
+    amarelo            = amarelo,
+    amarelo_opaco      = amarelo:dessaturado(0.3),
+    amarelo_intenso    = amarelo:saturado(0.1),
+
+    azul               = azul,
+    azul_opaco         = azul_fosco,
+    azul_intenso       = azul_claro,
+
+    magenta            = rosa2,
+    magenta_opaco      = rosa2:dessaturado(0.3),
+    magenta_intenso    = rosa2:saturado(0.1),
+
+    cianuro            = cianuro,
+    cianuro_opaco      = cianuro:dessaturado(0.3),
+    cianuro_intenso    = cianuro:saturado(0.3),
+
+    branco             = branco,
+    branco_opaco       = cinza9,
+    branco_intenso     = branco:saturado(0.3),
+
     -- Código
     texto              = estilo.elemento { letra = branco },
     constante          = estilo.elemento { letra = rosa1, atributos = { negrito } },
@@ -90,49 +131,4 @@ local estilo              = estilo.esquema {
     diagnostico_aviso  = estilo.elemento { sublinhado = cinza5, atributos = { sublinhado } },
     diagnostico_aviso2 = estilo.elemento { letra = amarelo },
     phantom_selection  = estilo.elemento { sublinhado = cinza5, atributos = { sublinhado } }
-}
-
-estilo.kakoune(estilo)
-estilo.fish(estilo)
-
-estilo.konsole {
-    fundo = estilo.cor(0x000000),
-    fundo_opaco = estilo.cor(0x000000),
-    fundo_intenso = cinza0,
-
-    letra = branco,
-    letra_opaco = cinza9,
-    letra_intenso = estilo.cor(0xffffff),
-
-    preto = estilo.cor(0x000000),
-    preto_opaco = estilo.cor(0x000000),
-    preto_intenso = cinza2,
-
-    vermelho = vermelho,
-    vermelho_opaco = vermelho:dessaturado(0.3),
-    vermelho_intenso = rosa1,
-
-    verde = verde,
-    verde_opaco = verde:dessaturado(0.3),
-    verde_intenso = verde:saturado(0.1),
-
-    amarelo = amarelo,
-    amarelo_opaco = amarelo:dessaturado(0.3),
-    amarelo_intenso = amarelo:saturado(0.1),
-
-    azul = azul,
-    azul_opaco = azul_fosco,
-    azul_intenso = azul_claro,
-
-    magenta = rosa2,
-    magenta_opaco = rosa2:dessaturado(0.3),
-    magenta_intenso = rosa2:saturado(0.1),
-
-    cianuro = cianuro,
-    cianuro_opaco = cianuro:dessaturado(0.3),
-    cianuro_intenso = cianuro:saturado(0.3),
-
-    branco = branco,
-    branco_opaco = cinza9,
-    branco_intenso = branco:saturado(0.3),
 }

@@ -1,14 +1,10 @@
 local Cor = {}
----@alias Cor { valor: integer | nil } Representa uma cor.
 
----@param valor integer | nil
----@return Cor
 local function cor(valor)
-    return setmetatable({ valor = valor }, Cor)
+    return setmetatable({ valor = valor }, { __index = Cor })
 end
 
---- Gera uma representação textual da cor no formato do Kakoune
----@return string
+-- Gera uma representação textual da cor no formato do Kakoune
 function Cor:kakoune()
     if not self.valor then
         return "default"
@@ -18,8 +14,7 @@ function Cor:kakoune()
     return string.format(format, self.valor)
 end
 
---- Gera uma representação textual da cor no formato do fish
----@return string
+-- Gera uma representação textual da cor no formato do fish
 function Cor:fish()
     if not self.valor then
         return ""
@@ -29,8 +24,7 @@ function Cor:fish()
     return string.format("%06x", valor)
 end
 
---- Gera uma representação textual da cor no formato do Konsole
----@return string
+-- Gera uma representação textual da cor no formato do Konsole
 function Cor:konsole()
     if not self.valor then
         return ""
@@ -42,9 +36,7 @@ function Cor:konsole()
     return string.format("%d,%d,%d", vermelho, verde, azul)
 end
 
---- Cria uma versão da cor atual saturada pelo fator especificado (de 0 a 1)
----@param fator number
----@return Cor
+-- Cria uma versão da cor atual saturada pelo fator especificado (de 0 a 1)
 function Cor:saturado(fator)
     local comando = string.format(
         "pastel saturate %f %06x | pastel format",
@@ -55,9 +47,7 @@ function Cor:saturado(fator)
     return cor(tonumber(saturada))
 end
 
---- Cria uma versão da cor atual dessaturada pelo fator especificado (de 0 a 1)
----@param fator number
----@return Cor
+-- Cria uma versão da cor atual dessaturada pelo fator especificado (de 0 a 1)
 function Cor:dessaturado(fator)
     local comando = string.format(
         "pastel desaturate %f %06x | pastel format",
@@ -68,9 +58,7 @@ function Cor:dessaturado(fator)
     return cor(tonumber(dessaturada))
 end
 
---- Cria uma versão da cor atual com brilho aumentado segundo fator especificado (de 0 a 1)
----@param fator number
----@return Cor
+-- Cria uma versão da cor atual com brilho aumentado segundo fator especificado (de 0 a 1)
 function Cor:claro(fator)
     local comando = string.format(
         "pastel lighten %f %06x | pastel format",
@@ -81,9 +69,7 @@ function Cor:claro(fator)
     return cor(tonumber(clara))
 end
 
---- Cria uma versão da cor atual com brilho diminuído segundo fator especificado (de 0 a 1)
----@param fator number
----@return Cor
+-- Cria uma versão da cor atual com brilho diminuído segundo fator especificado (de 0 a 1)
 function Cor:escuro(fator)
     local comando = string.format(
         "pastel darken %f %06x | pastel format",
@@ -94,21 +80,15 @@ function Cor:escuro(fator)
     return cor(tonumber(escura))
 end
 
---- Cria uma nova cor
-
 local Atributo = {}
----@alias Atributo { valor: "sublinhado" | "negrito" | "italico" | "inverso" }
 
---- Define um atributo de texto.
----@param valor "sublinhado" | "negrito" | "italico" | "inverso"
----@return Atributo
+-- Define um atributo de texto.
 local function atributo(valor)
     local atrib = { valor = valor }
-    return setmetatable(atrib, Atributo)
+    return setmetatable(atrib, { __index = Atributo })
 end
 
---- Gera uma representação textual do atributo no formato do Kakoune.
----@return string
+-- Gera uma representação textual do atributo no formato do Kakoune.
 function Atributo:kakoune()
     local kakoune = {
         sublinhado = "u",
@@ -120,8 +100,7 @@ function Atributo:kakoune()
     return kakoune[self.valor]
 end
 
---- Gera uma representação textual do Atributouto no formato do fish.
----@return string
+-- Gera uma representação textual do Atributouto no formato do fish.
 function Atributo:fish()
     local fish = {
         sublinhado = "--underline",
@@ -135,11 +114,9 @@ end
 
 local Atributos = {}
 
---- Define uma lista de atributos a serem aplicados a um texto.
----@param lista Atributo[]
----@return Atributo[]
+-- Define uma lista de atributos a serem aplicados a um texto.
 local function atributos(lista)
-    return setmetatable(lista, Atributos)
+    return setmetatable(lista, { __index = Atributos })
 end
 
 function Atributos:kakoune()
@@ -170,82 +147,84 @@ function Atributos:fish()
     return table.concat(elementos, " ")
 end
 
+local Elemento = {}
+
 local function elemento(spec)
     spec.fundo = spec.fundo or cor(nil)
     spec.letra = spec.letra or cor(nil)
     spec.sublinhado = spec.sublinhado or cor(nil)
     spec.atributos = spec.atributos and atributos(spec.atributos) or atributos {}
 
-    function spec:kakoune()
-        return string.format("%s,%s,%s%s", self.letra:kakoune(), self.fundo:kakoune(), self.sublinhado:kakoune(),
-            self.atributos:kakoune())
-    end
-
-    function spec:modo_fish()
-        local fundo = #self.fundo > 0 and " --background=" .. self.fundo:fish() or ""
-        return string.format("%s %s%s", self.letra:fish(), self.atributos:fish(), fundo)
-    end
-
-    return setmetatable(spec, spec)
+    return setmetatable(spec, { __index = Elemento })
 end
 
-local function estilo(elementos)
-    local e = { elementos = elementos }
-
-    function e.modo_kakoune()
-        for _, elem in pairs(elementos) do
-            elem:modo_kakoune()
-        end
-    end
-
-    function e.modo_fish()
-        for _, elem in pairs(elementos) do
-            elem:modo_fish()
-        end
-    end
-
-    return e
+function Elemento:kakoune()
+    return string.format(
+        "%s,%s,%s%s",
+        self.letra:kakoune(),
+        self.fundo:kakoune(),
+        self.sublinhado:kakoune(),
+        self.atributos:kakoune()
+    )
 end
 
-local function konsole(cores)
+function Elemento:fish()
+    local fundo = #self.fundo > 0 and " --background=" .. self.fundo:fish() or ""
+    return string.format(
+        "%s %s%s",
+        self.letra:fish(),
+        self.atributos:fish(),
+        fundo
+    )
+end
+
+function Elemento:konsole()
+    return ""
+end
+
+local function konsole(esquema)
     io.input "konsole.template"
     io.output "colors/Garbo.colorscheme"
 
     local template = io.read("a")
 
-    for nome, cor in pairs(cores) do
-        template = template:gsub("$" .. nome .. "%f[^%w_]", cor:konsole())
+    for nome, elem in pairs(esquema) do
+        template = template:gsub("$" .. nome .. "%f[^%w_]", elem:konsole())
     end
 
     io.write(template)
 end
 
-local function kakoune(estilo)
+local function kakoune(esquema)
     io.input "kak.template"
     io.output "colors/garbo.kak"
 
     local template = io.read("a")
-    estilo:modo_kakoune()
 
-    for nome, elem in pairs(estilo.elementos) do
-        template = template:gsub("$" .. nome .. "%f[^%w_]", tostring(elem))
+    for nome, elem in pairs(esquema) do
+        template = template:gsub("$" .. nome .. "%f[^%w_]", elem:kakoune())
     end
 
     io.write(template)
 end
 
-local function fish(estilo)
+local function fish(esquema)
     io.input "fish.template"
     io.output "colors/garbo.fish"
 
     local template = io.read("a")
-    estilo:modo_fish()
 
-    for nome, elem in pairs(estilo.elementos) do
-        template = template:gsub("$" .. nome .. "%f[^%w_]", tostring(elem))
+    for nome, elem in pairs(esquema) do
+        template = template:gsub("$" .. nome .. "%f[^%w_]", elem:fish())
     end
 
     io.write(template)
+end
+
+local function esquema(elementos)
+    konsole(elementos)
+    kakoune(elementos)
+    fish(elementos)
 end
 
 
@@ -254,8 +233,5 @@ return {
     cor = cor,
     atributo = atributo,
     elemento = elemento,
-    esquema = estilo,
-    konsole = konsole,
-    kakoune = kakoune,
-    fish = fish,
+    esquema = esquema,
 }

@@ -1,169 +1,189 @@
+local Cor = {}
+---@alias Cor { valor: integer | nil } Representa uma cor.
+
+---@param valor integer | nil
+---@return Cor
 local function cor(valor)
-    local c = { valor = valor }
-
-    function c:modo_kakoune()
-        self.__tostring = function()
-            if self.valor == "nenhuma" then
-                return "default"
-            end
-
-            local format = self.valor > 0xffffff and "rgba:%08x" or "rgb:%06x"
-            return string.format(format, self.valor)
-        end
-    end
-
-    function c:modo_fish()
-        self.__tostring = function()
-            if self.valor == "nenhuma" then
-                return ""
-            end
-
-            local valor = self.valor > 0xffffff and self.valor // 0x100 or self.valor
-            return string.format("%06x", valor)
-        end
-    end
-
-    function c:saturado(factor)
-        local comando = string.format(
-            "pastel saturate %f %06x | pastel format",
-            factor,
-            self.valor
-        )
-        local saturada = io.popen(comando):read("a"):gsub("#", "0x")
-        return cor(tonumber(saturada))
-    end
-
-    function c:dessaturado(factor)
-        local comando = string.format(
-            "pastel desaturate %f %06x | pastel format",
-            factor,
-            self.valor
-        )
-        local dessaturada = io.popen(comando):read("a"):gsub("#", "0x")
-        return cor(tonumber(dessaturada))
-    end
-
-    function c:claro(factor)
-        local comando = string.format(
-            "pastel lighten %f %06x | pastel format",
-            factor,
-            self.valor
-        )
-        local clara = io.popen(comando):read("a"):gsub("#", "0x")
-        return cor(tonumber(clara))
-    end
-
-    function c:escuro(factor)
-        local comando = string.format(
-            "pastel darken %f %06x | pastel format",
-            factor,
-            self.valor
-        )
-        local escura = io.popen(comando):read("a"):gsub("#", "0x")
-        return cor(tonumber(escura))
-    end
-
-    return setmetatable(c, c)
+    return setmetatable({ valor = valor }, Cor)
 end
 
+--- Gera uma representação textual da cor no formato do Kakoune
+---@return string
+function Cor:kakoune()
+    if not self.valor then
+        return "default"
+    end
+
+    local format = self.valor > 0xffffff and "rgba:%08x" or "rgb:%06x"
+    return string.format(format, self.valor)
+end
+
+--- Gera uma representação textual da cor no formato do fish
+---@return string
+function Cor:fish()
+    if not self.valor then
+        return ""
+    end
+
+    local valor = self.valor > 0xffffff and self.valor // 0x100 or self.valor
+    return string.format("%06x", valor)
+end
+
+--- Gera uma representação textual da cor no formato do Konsole
+---@return string
+function Cor:konsole()
+    if not self.valor then
+        return ""
+    end
+
+    local vermelho = math.floor(self.valor / 65536) % 256
+    local verde = math.floor(self.valor / 256) % 256
+    local azul = self.valor % 256
+    return string.format("%d,%d,%d", vermelho, verde, azul)
+end
+
+--- Cria uma versão da cor atual saturada pelo fator especificado (de 0 a 1)
+---@param fator number
+---@return Cor
+function Cor:saturado(fator)
+    local comando = string.format(
+        "pastel saturate %f %06x | pastel format",
+        fator,
+        self.valor
+    )
+    local saturada = io.popen(comando):read("a"):gsub("#", "0x")
+    return cor(tonumber(saturada))
+end
+
+--- Cria uma versão da cor atual dessaturada pelo fator especificado (de 0 a 1)
+---@param fator number
+---@return Cor
+function Cor:dessaturado(fator)
+    local comando = string.format(
+        "pastel desaturate %f %06x | pastel format",
+        fator,
+        self.valor
+    )
+    local dessaturada = io.popen(comando):read("a"):gsub("#", "0x")
+    return cor(tonumber(dessaturada))
+end
+
+--- Cria uma versão da cor atual com brilho aumentado segundo fator especificado (de 0 a 1)
+---@param fator number
+---@return Cor
+function Cor:claro(fator)
+    local comando = string.format(
+        "pastel lighten %f %06x | pastel format",
+        fator,
+        self.valor
+    )
+    local clara = io.popen(comando):read("a"):gsub("#", "0x")
+    return cor(tonumber(clara))
+end
+
+--- Cria uma versão da cor atual com brilho diminuído segundo fator especificado (de 0 a 1)
+---@param fator number
+---@return Cor
+function Cor:escuro(fator)
+    local comando = string.format(
+        "pastel darken %f %06x | pastel format",
+        fator,
+        self.valor
+    )
+    local escura = io.popen(comando):read("a"):gsub("#", "0x")
+    return cor(tonumber(escura))
+end
+
+--- Cria uma nova cor
+
+local Atributo = {}
+---@alias Atributo { valor: "sublinhado" | "negrito" | "italico" | "inverso" }
+
+--- Define um atributo de texto.
+---@param valor "sublinhado" | "negrito" | "italico" | "inverso"
+---@return Atributo
 local function atributo(valor)
     local atrib = { valor = valor }
-
-    function atrib:modo_kakoune()
-        local kakoune = {
-            sublinhado = "u",
-            negrito = "b",
-            italico = "i",
-            inverso = "r"
-        }
-
-        self.__tostring = function() return kakoune[self.valor] end
-    end
-
-    function atrib:modo_fish()
-        local fish = {
-            sublinhado = "--underline",
-            negrito = "--bold",
-            italico = "--underline",
-            inverso = "--reverse"
-        }
-
-        self.__tostring = function() return fish[self.valor] end
-    end
-
-    return setmetatable(atrib, atrib)
+    return setmetatable(atrib, Atributo)
 end
 
+--- Gera uma representação textual do atributo no formato do Kakoune.
+---@return string
+function Atributo:kakoune()
+    local kakoune = {
+        sublinhado = "u",
+        negrito = "b",
+        italico = "i",
+        inverso = "r"
+    }
+
+    return kakoune[self.valor]
+end
+
+--- Gera uma representação textual do Atributouto no formato do fish.
+---@return string
+function Atributo:fish()
+    local fish = {
+        sublinhado = "--underline",
+        negrito = "--bold",
+        italico = "--underline",
+        inverso = "--reverse"
+    }
+
+    return fish[self.valor]
+end
+
+local Atributos = {}
+
+--- Define uma lista de atributos a serem aplicados a um texto.
+---@param lista Atributo[]
+---@return Atributo[]
 local function atributos(lista)
-    function lista:modo_kakoune()
-        for _, atributo in ipairs(self) do
-            atributo:modo_kakoune()
-        end
+    return setmetatable(lista, Atributos)
+end
 
-        self.__tostring = function()
-            if #self == 0 then
-                return ""
-            end
-
-            local elementos = {}
-
-            for i, elemento in ipairs(self) do
-                elementos[i] = tostring(elemento)
-            end
-
-            return "+" .. table.concat(elementos)
-        end
+function Atributos:kakoune()
+    if #self == 0 then
+        return ""
     end
 
-    function lista:modo_fish()
-        for _, atributo in ipairs(self) do
-            atributo:modo_fish()
-        end
+    local elementos = {}
 
-        self.__tostring = function()
-            if #self == 0 then
-                return ""
-            end
-
-            local elementos = {}
-
-            for i, elemento in ipairs(self) do
-                elementos[i] = tostring(elemento)
-            end
-
-            return table.concat(elementos, " ")
-        end
+    for i, elemento in ipairs(self) do
+        elementos[i] = elemento:kakoune()
     end
 
-    return setmetatable(lista, lista)
+    return "+" .. table.concat(elementos)
+end
+
+function Atributos:fish()
+    if #self == 0 then
+        return ""
+    end
+
+    local elementos = {}
+
+    for i, elemento in ipairs(self) do
+        elementos[i] = elemento:fish()
+    end
+
+    return table.concat(elementos, " ")
 end
 
 local function elemento(spec)
-    spec.fundo = spec.fundo or cor "nenhuma"
-    spec.letra = spec.letra or cor "nenhuma"
-    spec.sublinhado = spec.sublinhado or cor "nenhuma"
+    spec.fundo = spec.fundo or cor(nil)
+    spec.letra = spec.letra or cor(nil)
+    spec.sublinhado = spec.sublinhado or cor(nil)
     spec.atributos = spec.atributos and atributos(spec.atributos) or atributos {}
 
-    function spec:modo_kakoune()
-        self.fundo:modo_kakoune()
-        self.letra:modo_kakoune()
-        self.sublinhado:modo_kakoune()
-        self.atributos:modo_kakoune()
-
-        self.__tostring = function()
-            return string.format("%s,%s,%s%s", self.letra, self.fundo, self.sublinhado, self.atributos)
-        end
+    function spec:kakoune()
+        return string.format("%s,%s,%s%s", self.letra:kakoune(), self.fundo:kakoune(), self.sublinhado:kakoune(),
+            self.atributos:kakoune())
     end
 
     function spec:modo_fish()
-        self.fundo:modo_fish()
-        self.letra:modo_fish()
-        self.atributos:modo_fish()
-
-        self.__tostring = function()
-            self.fundo = #self.fundo > 0 and " --background=" .. self.fundo or ""
-            return string.format("%s %s%s", self.letra, self.atributos, self.fundo)
-        end
+        local fundo = #self.fundo > 0 and " --background=" .. self.fundo:fish() or ""
+        return string.format("%s %s%s", self.letra:fish(), self.atributos:fish(), fundo)
     end
 
     return setmetatable(spec, spec)
@@ -187,18 +207,6 @@ local function estilo(elementos)
     return e
 end
 
-local function azul(cor)
-    return tostring(cor.valor % 256)
-end
-
-local function verde(cor)
-    return tostring(math.floor(cor.valor / 256) % 256)
-end
-
-local function vermelho(cor)
-    return tostring(math.floor(cor.valor / 65536) % 256)
-end
-
 local function konsole(cores)
     io.input "konsole.template"
     io.output "colors/Garbo.colorscheme"
@@ -206,9 +214,7 @@ local function konsole(cores)
     local template = io.read("a")
 
     for nome, cor in pairs(cores) do
-        template = template:gsub("$" .. nome .. "_r%f[^%w_]", vermelho(cor))
-        template = template:gsub("$" .. nome .. "_g%f[^%w_]", verde(cor))
-        template = template:gsub("$" .. nome .. "_b%f[^%w_]", azul(cor))
+        template = template:gsub("$" .. nome .. "%f[^%w_]", cor:konsole())
     end
 
     io.write(template)

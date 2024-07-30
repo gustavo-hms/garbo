@@ -1,6 +1,6 @@
 set -L
 set -U fish_color_normal normal
-set -U fish_color_command bryellow
+set -U fish_color_command yellow
 set -U fish_color_quote ff1ea1 
 set -U fish_color_redirection d3005b 
 set -U fish_color_end 57576f 
@@ -19,7 +19,7 @@ set -U fish_color_user yellow
 set -U fish_color_host d3005b 
 set -U fish_color_cancel -r
 set -U fish_pager_color_completion normal
-set -U fish_pager_color_description e69100 
+set -U fish_pager_color_description d78800 
 set -U fish_pager_color_prefix normal --bold --underline
 set -U fish_pager_color_progress b1b1c2 
 set -U fish_color_comment 81819c 

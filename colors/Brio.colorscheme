@@ -50,13 +50,13 @@ Color=230,146,0
 
 # Azul
 [Color4]
-Color=31,31,210
+Color=55,55,186
 
 [Color4Faint]
-Color=43,43,198
+Color=67,67,174
 
 [Color4Intense]
-Color=0,0,241
+Color=43,43,198
 
 # Magenta
 [Color5]
@@ -80,22 +80,22 @@ Color=0,135,153
 
 # Branco
 [Color7]
-Color=213,213,222
+Color=226,226,232
 
 [Color7Faint]
-Color=255,255,255
+Color=229,229,229
 
 [Color7Intense]
-Color=202,202,233
+Color=223,223,235
 
 [Foreground]
-Color=255,255,255
+Color=68,68,86
 
 [ForegroundFaint]
-Color=255,255,255
+Color=77,77,77
 
 [ForegroundIntense]
-Color=255,255,255
+Color=60,60,94
 
 [General]
 Anchor=0.5,0.5

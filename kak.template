@@ -48,7 +48,10 @@ face global StatusLineValue    green,default
 face global StatusCursor       $cursor1
 face global Prompt             $palavra_chave
 face global MatchingChar       $elemento_casado
-face global BufferPadding      rgb:111111+F
+face global BufferPadding      $elemento_de_fundo+F
+
+# Peneira
+face global PeneiraSelected $linha_atual
 
 # kakoune-lsp
 face global DiagnosticError           $diagnostico_erro

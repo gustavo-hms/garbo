@@ -1,11 +1,6 @@
 local estilo              = require "estilo"
 
 -- Cores
-local branco              = estilo.cor(0xd5d5de)
-local branco_translucido1 = estilo.cor(0x99999977)
-local branco_translucido2 = estilo.cor(0xaaaaaa77)
-local preto               = estilo.cor(0x000000)
-local preto_translucido   = estilo.cor(0x00000050)
 local cianuro             = estilo.cor(0x008799)
 local azul_claro          = estilo.cor(0x4c54e8)
 local azul                = estilo.cor(0x1f1fd2)
@@ -17,16 +12,19 @@ local rosa2               = estilo.cor(0xff1ea1)
 local vermelho            = estilo.cor(0xef2745)
 
 -- Do mais escuro pro mais claro
+local preto               = estilo.cor(0x000000)
 local cinza0              = estilo.cor(0x1e1e26)
-local cinza1              = cinza0:claro(0.85 * 1)
-local cinza2              = cinza0:claro(0.85 * 2)
-local cinza3              = cinza0:claro(0.85 * 3)
-local cinza4              = cinza0:claro(0.85 * 4)
-local cinza5              = cinza0:claro(0.85 * 5)
-local cinza6              = cinza0:claro(0.85 * 6)
-local cinza7              = cinza0:claro(0.85 * 7)
-local cinza8              = cinza0:claro(0.85 * 8)
-local cinza9              = cinza0:claro(0.85 * 9)
+local cinza1              = cinza0:claro(0.085 * 1)
+local cinza2              = cinza0:claro(0.085 * 2)
+local cinza3              = cinza0:claro(0.085 * 3)
+local cinza4              = cinza0:claro(0.085 * 4)
+local cinza5              = cinza0:claro(0.085 * 5)
+local cinza6              = cinza0:claro(0.085 * 6)
+local cinza7              = cinza0:claro(0.085 * 7)
+local cinza8              = cinza0:claro(0.085 * 8)
+local branco              = cinza0:claro(0.085 * 9)
+local branco_translucido1 = estilo.cor(0x99999977)
+local branco_translucido2 = estilo.cor(0xaaaaaa77)
 
 local negrito             = estilo.atributo "negrito"
 local italico             = estilo.atributo "italico"
@@ -41,7 +39,7 @@ estilo.esquema "brio" {
 
     letra              = cinza2,
     letra_opaco        = cinza2:dessaturado(0.3),
-    letra_intenso      = cinza2:saturado(0.3),
+    letra_intenso      = cinza2:saturado(0.1),
 
     preto              = preto,
     preto_opaco        = preto:dessaturado(0.3),
@@ -59,9 +57,9 @@ estilo.esquema "brio" {
     amarelo_opaco      = amarelo:dessaturado(0.3),
     amarelo_intenso    = amarelo:saturado(0.1),
 
-    azul               = azul,
-    azul_opaco         = azul:dessaturado(0.1),
-    azul_intenso       = azul:saturado(0.3),
+    azul               = azul:dessaturado(0.2),
+    azul_opaco         = azul:dessaturado(0.2):dessaturado(0.1),
+    azul_intenso       = azul:dessaturado(0.2):saturado(0.1),
 
     magenta            = rosa2,
     magenta_opaco      = rosa2:dessaturado(0.3),
@@ -72,8 +70,8 @@ estilo.esquema "brio" {
     cianuro_intenso    = cianuro:saturado(0.3),
 
     branco             = branco,
-    branco_opaco       = cinza9,
-    branco_intenso     = branco:saturado(0.3),
+    branco_opaco       = branco:dessaturado(0.3),
+    branco_intenso     = branco:saturado(0.1),
 
     -- Código
     texto              = estilo.elemento { letra = cinza2 },
@@ -85,7 +83,7 @@ estilo.esquema "brio" {
     funcao             = estilo.elemento { letra = azul_claro },
     meta               = estilo.elemento { letra = azul },
     especial           = estilo.elemento { letra = vermelho },
-    erro               = estilo.elemento { letra = vermelho, atributos = { negrito } },
+    erro               = estilo.elemento { letra = vermelho },
     todo               = estilo.elemento { letra = preto, fundo = vermelho },
     comentario         = estilo.elemento { letra = cinza5 },
     operador           = estilo.elemento { letra = cinza3 },
@@ -111,16 +109,16 @@ estilo.esquema "brio" {
     cursor2            = estilo.elemento { letra = branco, fundo = cinza2 },
     cursor3            = estilo.elemento { letra = branco, fundo = cinza5 },
     cursor4            = estilo.elemento { letra = branco, fundo = cinza3 },
-    menu1              = estilo.elemento { letra = preto, fundo = branco },
-    menu2              = estilo.elemento { letra = preto, fundo = branco },
-    selecao_do_menu    = estilo.elemento { letra = preto, fundo = branco, atributos = { inverso } },
+    menu1              = estilo.elemento { letra = preto, fundo = cinza8 },
+    menu2              = estilo.elemento { letra = preto, fundo = cinza8 },
+    status_ativo       = estilo.elemento { letra = cinza4, fundo = cinza4 },
+    status             = estilo.elemento { letra = preto, fundo = cinza8 },
+    selecao_do_menu    = estilo.elemento { letra = preto, fundo = cinza8, atributos = { inverso } },
     informacao         = estilo.elemento { letra = verde },
     busca              = estilo.elemento { letra = cianuro, atributos = { negrito } },
     busca_incremental  = estilo.elemento { letra = cianuro, atributos = { inverso } },
     linha_atual        = estilo.elemento { fundo = cinza8 },
     elemento_de_fundo  = estilo.elemento { letra = cinza7 },
-    status_ativo       = estilo.elemento { letra = cinza4, fundo = cinza4 },
-    status             = estilo.elemento { letra = preto, fundo = branco },
     decorativos        = estilo.elemento { letra = branco },
     diagnostico_erro   = estilo.elemento { sublinhado = vermelho, atributos = { sublinhado } },
     diagnostico_aviso  = estilo.elemento { sublinhado = cinza8, atributos = { sublinhado } },

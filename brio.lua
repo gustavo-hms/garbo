@@ -41,13 +41,13 @@ estilo.esquema "brio" {
     letra_opaco        = cinza2:dessaturado(0.3),
     letra_intenso      = cinza2:saturado(0.1),
 
-    preto              = preto,
-    preto_opaco        = preto:dessaturado(0.3),
-    preto_intenso      = preto:saturado(0.3),
+    preto              = cinza2,
+    preto_opaco        = cinza2:dessaturado(0.3),
+    preto_intenso      = cinza2:saturado(0.3),
 
-    vermelho           = vermelho,
-    vermelho_opaco     = vermelho:dessaturado(0.3),
-    vermelho_intenso   = vermelho:saturado(0.3),
+    vermelho           = rosa1,
+    vermelho_opaco     = rosa1:dessaturado(0.3),
+    vermelho_intenso   = rosa1:saturado(0.3),
 
     verde              = verde,
     verde_opaco        = verde:dessaturado(0.3),

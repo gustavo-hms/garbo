@@ -10,23 +10,23 @@ Color=255,255,255
 
 # Preto
 [Color0]
-Color=0,0,0
+Color=68,68,86
 
 [Color0Faint]
-Color=0,0,0
+Color=77,77,77
 
 [Color0Intense]
-Color=0,0,0
+Color=45,45,109
 
 # Vermelho
 [Color1]
-Color=239,39,69
+Color=211,0,91
 
 [Color1Faint]
-Color=204,74,93
+Color=179,32,96
 
 [Color1Intense]
-Color=255,23,58
+Color=211,0,91
 
 # Verde
 [Color2]

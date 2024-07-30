@@ -188,6 +188,7 @@ local function konsole(nome, esquema)
     io.output(string.format("colors/%s.colorscheme", nome))
 
     local template = io.read("a")
+    template = template:gsub("$nome%f[^%w_]", nome)
 
     for nome, elem in pairs(esquema) do
         template = template:gsub("$" .. nome .. "%f[^%w_]", elem:konsole())

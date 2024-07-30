@@ -1,107 +1,107 @@
 [Background]
-Color=$fundo
+Color=255,255,255
 
 [BackgroundFaint]
 Color=49,54,59
-Color=$fundo_opaco
+Color=255,255,255
 
 [BackgroundIntense]
-Color=$fundo_intenso
+Color=255,255,255
 
 # Preto
 [Color0]
-Color=$preto
+Color=0,0,0
 
 [Color0Faint]
-Color=$preto_opaco
+Color=0,0,0
 
 [Color0Intense]
-Color=$preto_intenso
+Color=0,0,0
 
 # Vermelho
 [Color1]
-Color=$vermelho
+Color=239,39,69
 
 [Color1Faint]
-Color=$vermelho_opaco
+Color=204,74,93
 
 [Color1Intense]
-Color=$vermelho_intenso
+Color=255,23,58
 
 # Verde
 [Color2]
-Color=$verde
+Color=0,109,76
 
 [Color2Faint]
-Color=$verde_opaco
+Color=16,93,70
 
 [Color2Intense]
-Color=$verde_intenso
+Color=0,109,76
 
 # Amarelo
 [Color3]
-Color=$amarelo
+Color=230,145,0
 
 [Color3Faint]
-Color=$amarelo_opaco
+Color=196,136,35
 
 [Color3Intense]
-Color=$amarelo_intenso
+Color=230,146,0
 
 # Azul
 [Color4]
-Color=$azul
+Color=31,31,210
 
 [Color4Faint]
-Color=$azul_opaco
+Color=43,43,198
 
 [Color4Intense]
-Color=$azul_intenso
+Color=0,0,241
 
 # Magenta
 [Color5]
-Color=$magenta
+Color=255,30,161
 
 [Color5Faint]
-Color=$magenta_opaco
+Color=221,64,156
 
 [Color5Intense]
-Color=$magenta_intenso
+Color=255,30,161
 
 # Cianuro
 [Color6]
-Color=$cianuro
+Color=0,135,153
 
 [Color6Faint]
-Color=$cianuro_opaco
+Color=23,118,130
 
 [Color6Intense]
-Color=$cianuro_intenso
+Color=0,135,153
 
 # Branco
 [Color7]
-Color=$branco
+Color=213,213,222
 
 [Color7Faint]
-Color=$branco_opaco
+Color=255,255,255
 
 [Color7Intense]
-Color=$branco_intenso
+Color=202,202,233
 
 [Foreground]
-Color=$letra
+Color=255,255,255
 
 [ForegroundFaint]
-Color=$letra_opaco
+Color=255,255,255
 
 [ForegroundIntense]
-Color=$letra_intenso
+Color=255,255,255
 
 [General]
 Anchor=0.5,0.5
 Blur=true
 ColorRandomization=false
-Description=$nome
+Description=Brio
 FillStyle=Tile
 Opacity=0.75
 Wallpaper=

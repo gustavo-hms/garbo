@@ -26,8 +26,8 @@ face global list   rgb:1e1e26,default,default
 
 # Builtin faces
 face global Default            rgb:444456,default,default
-face global PrimarySelection   rgba:99999977,rgb:cacad5,default
-face global SecondarySelection rgba:aaaaaa77,rgb:e2e2e8,default
+face global PrimarySelection   rgba:99999977,rgb:b1b1c2,default
+face global SecondarySelection rgba:aaaaaa77,rgb:cacad5,default
 face global PrimaryCursor      rgb:e2e2e8,rgb:57576f,default
 face global SecondaryCursor    rgb:e2e2e8,rgb:81819c,default
 face global PrimaryCursorEol   rgb:e2e2e8,rgb:444456,default

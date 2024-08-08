@@ -103,8 +103,8 @@ estilo.esquema "brio" {
     -- UI
     elemento_casado    = estilo.elemento { letra = vermelho },
     referencia         = estilo.elemento { sublinhado = cinza6, atributos = { sublinhado } },
-    selecao1           = estilo.elemento { letra = branco_translucido1, fundo = cinza8 },
-    selecao2           = estilo.elemento { letra = branco_translucido2, fundo = branco },
+    selecao1           = estilo.elemento { letra = branco_translucido1, fundo = cinza7 },
+    selecao2           = estilo.elemento { letra = branco_translucido2, fundo = cinza8 },
     cursor1            = estilo.elemento { letra = branco, fundo = cinza3 },
     cursor2            = estilo.elemento { letra = branco, fundo = cinza2 },
     cursor3            = estilo.elemento { letra = branco, fundo = cinza5 },

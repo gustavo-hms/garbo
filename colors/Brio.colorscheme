@@ -40,13 +40,13 @@ Color=0,109,76
 
 # Amarelo
 [Color3]
-Color=215,136,0
+Color=222,122,0
 
 [Color3Faint]
-Color=183,128,32
+Color=189,119,33
 
 [Color3Intense]
-Color=215,136,0
+Color=222,122,0
 
 # Azul
 [Color4]

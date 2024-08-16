@@ -1,5 +1,5 @@
 # For Code
-face global value     rgb:d3005b,default,default+b
+face global value     rgb:ed0067,default,default
 face global type      rgb:00b982,default,default
 face global variable  rgb:ccd0da,default,default
 face global module    rgb:7a80ee,default,default
@@ -15,7 +15,7 @@ face global parameter rgb:cbd4ec,default,default
 
 # For markup
 face global title  rgb:7a80ee,default,default
-face global header rgb:d3005b,default,default
+face global header rgb:ed0067,default,default
 face global bold   default,default,default+b
 face global italic default,default,default+i
 face global mono   rgb:00b982,default,default
@@ -48,7 +48,10 @@ face global StatusLineValue    green,default
 face global StatusCursor       rgb:000000,rgb:ccd0da,default
 face global Prompt             rgb:fffb79,default,default
 face global MatchingChar       rgb:ef2745,default,default
-face global BufferPadding      rgb:111111+F
+face global BufferPadding      rgb:373941,default,default+F
+
+# Peneira
+face global PeneiraSelected default,rgb:1c1d21,default
 
 # kakoune-lsp
 face global DiagnosticError           default,default,rgb:ef2745+u

@@ -11,7 +11,7 @@ local azul                = estilo.cor(0x5656e6)
 local azul_fosco          = estilo.cor(0x2a2a32)
 local verde               = estilo.cor(0x00b982)
 local amarelo             = estilo.cor(0xfffb79)
-local rosa1               = estilo.cor(0xd3005b)
+local rosa1               = estilo.cor(0xd3005b):claro(0.05)
 local rosa2               = estilo.cor(0xff1ea1)
 local vermelho            = estilo.cor(0xef2745)
 
@@ -80,7 +80,7 @@ estilo.esquema "garbo" {
 
     -- Código
     texto              = estilo.elemento { letra = branco },
-    constante          = estilo.elemento { letra = rosa1, atributos = { negrito } },
+    constante          = estilo.elemento { letra = rosa1 },
     parametro          = estilo.elemento { letra = cinza9 },
     string             = estilo.elemento { letra = rosa2 },
     palavra_chave      = estilo.elemento { letra = amarelo },
